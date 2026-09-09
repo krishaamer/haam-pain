@@ -1,0 +1,93 @@
+[
+  {
+    "id":"pet-care-cost","title":"Pet-care cost + insurance optimizer","category":"Family",
+    "wedge":"Compare insurance, deductibles and vet estimates against the pet’s age/breed/history; flag exclusions and model catastrophic scenarios.",
+    "buyer":"Toronto pet owner facing rising insurance or a large non-emergency estimate.",
+    "painMoment":"“Is this premium/quote normal, should I switch, and what am I actually giving up if I do?”",
+    "currentWorkaround":"Call insurers, ask Reddit, compare PDFs manually, self-insure with an emergency fund.",
+    "whyNow":"Toronto pet owners report large postal-code-sensitive premium differences and substantial rate increases, while emergency treatment can run into thousands.",
+    "firstPaidTest":"Manually review 30 policy/quote sets and charge a small fixed fee only if the analysis finds at least C$200/year of value or a meaningful coverage difference.",
+    "priceHypothesis":"C$49–149 review; referral model possible",
+    "dimensions":{"pain":4.1,"economics":3.8,"founderFit":4.0,"distribution":4.5,"insightGap":4.2,"solutionLeverage":4.6,"market":4.3,"validation":4.9},
+    "baseScore":83.6,"riskPenalty":2,"score":81.6,"priorityScore":79.6,"founderReturn":81,"confidence":4.2,
+    "riskNotes":["Insurance recommendations may cross into regulated advice depending on implementation.","Policy wording changes often and must be current."],
+    "fitNote":"Strong fit for document comparison, scenario modeling and consumer UX. Needs careful regulatory boundary and possibly licensed insurance review.",
+    "evidence":[
+      {"title":"Toronto pet-insurance pricing discussion, June 2026","url":"https://www.reddit.com/r/askTO/comments/1u2p3hk/what_are_you_paying_for_pet_insurance_in_toronto/","type":"community","note":"Shows premiums from roughly C$50 to C$200+/month and address-sensitive pricing."},
+      {"title":"Toronto vet-fee shock discussion, May 2026","url":"https://www.reddit.com/r/askTO/comments/1t39yl4/are_these_vet_fees_normal/","type":"community","note":"Owner describes a dental estimate jumping from C$1,500 to C$3,500 during the procedure."}
+    ]
+  },
+  {
+    "id":"precon-closing-triage","title":"Pre-construction closing-gap triage","category":"Housing",
+    "wedge":"A rapid closing-risk command centre that turns the APS, appraisal gap, mortgage options, assignment rights and deadlines into one decision tree with licensed referrals.",
+    "buyer":"GTA pre-construction condo buyer nearing occupancy/closing with a financing gap.",
+    "painMoment":"“The unit is worth less than I agreed to pay and I may lose my deposit or get sued if I cannot close.”",
+    "currentWorkaround":"Panic-call mortgage broker, lawyer, realtor and family, each seeing only one part of the problem.",
+    "whyNow":"Bank of Canada says presale economics have reversed; 2026 Toronto-area reporting documents buyers losing deposits and facing six-figure gaps.",
+    "firstPaidTest":"Partner with one real-estate lawyer and mortgage broker to sell a fixed-fee 48-hour triage that organizes facts before regulated advice begins.",
+    "priceHypothesis":"C$500–1,500 triage; partner referral economics",
+    "dimensions":{"pain":5.0,"economics":4.9,"founderFit":3.4,"distribution":4.1,"insightGap":4.8,"solutionLeverage":4.0,"market":3.8,"validation":4.7},
+    "baseScore":89.0,"riskPenalty":9,"score":80.0,"priorityScore":79.5,"founderReturn":83,"confidence":4.8,
+    "riskNotes":["Heavy legal and mortgage regulation.","Extremely high trust and liability.","The current wave may be cyclical rather than durable."],
+    "fitNote":"Excellent systems/decision-tree fit but weak regulated-domain credibility. This only works as an intake/coordination layer with licensed professionals, not as independent legal or mortgage advice.",
+    "evidence":[
+      {"title":"Bank of Canada: Toronto condo-market slowdown","url":"https://www.bankofcanada.ca/2026/02/sparks-at-bank-article-2026-2/","type":"official","note":"Explains how presale investors can face large losses when closing values fall."},
+      {"title":"CityNews: GTA buyers facing appraisal gaps and losses","url":"https://toronto.citynews.ca/2026/02/10/falling-gta-condo-appraisals-leave-pre-construction-buyers-facing-massive-losses/","type":"news","note":"Documents a buyer losing a 20% deposit and potentially owing more after appraisal shortfall."}
+    ]
+  },
+  {
+    "id":"commercial-lease-audit","title":"Commercial lease + TMI cost audit","category":"Business",
+    "wedge":"Translate the lease, TMI/CAM reconciliations and landlord invoices into “what you owe, why, what changed and what needs professional challenge.”",
+    "buyer":"Independent Toronto retailer, cafe, studio or service business leasing space.",
+    "painMoment":"“My landlord says I owe thousands more in taxes/maintenance/insurance and I cannot tell if the calculation is right.”",
+    "currentWorkaround":"Accountant, lawyer, landlord emails and spreadsheets, often only after a dispute has escalated.",
+    "whyNow":"A 2026 Cabbagetown cafe dispute centred on opaque TMI charges ranging from C$5k–11k; City Council also debated protections for small commercial tenants.",
+    "firstPaidTest":"Audit one year of lease + TMI statements for five businesses, returning a variance map and questions for their lawyer/accountant.",
+    "priceHypothesis":"C$500–2,500 / audit",
+    "dimensions":{"pain":4.4,"economics":4.7,"founderFit":4.0,"distribution":3.8,"insightGap":4.5,"solutionLeverage":4.4,"market":4.1,"validation":4.3},
+    "baseScore":86.4,"riskPenalty":5,"score":81.4,"priorityScore":79.0,"founderReturn":87,"confidence":4.0,
+    "riskNotes":["Can cross into legal/accounting advice.","Acquisition is relationship-heavy and local."],
+    "fitNote":"Strong fit for messy-document synthesis, anomaly detection and operational dashboards. Needs a commercial real-estate lawyer/accountant for authority and edge cases.",
+    "evidence":[
+      {"title":"CityNews: Cabbagetown cafe TMI dispute","url":"https://toronto.citynews.ca/2026/07/02/cabbagetown-restaurant-facing-eviction-amid-landlord-dispute/","type":"news","note":"Owner describes unclear TMI charges varying between C$5,000 and C$11,000."},
+      {"title":"Toronto Council motion on commercial rent protections in Chinatown","url":"https://secure.toronto.ca/council/agenda-item.do?item=2026.MM39.53","type":"official","note":"Council asked Ontario to consider commercial rent protections for local businesses."},
+      {"title":"Why Toronto small businesses struggle to find retail space","url":"https://www.readthepeak.com/p/in-a-city-with-so-many-vacant-storefronts-why-is-it-so-difficult-for-small-businesses-to-find-retail","type":"news","note":"Shows continued search friction and information asymmetry in commercial leasing."}
+    ]
+  },
+  {
+    "id":"mortgage-renewal-second-opinion","title":"Mortgage renewal second opinion","category":"Finance",
+    "wedge":"Turn renewal offer, balance, amortization and competing rates into a plain-language cost-of-inaction report and broker-ready switching checklist.",
+    "buyer":"Toronto homeowner renewing a large 2021-era mortgage.",
+    "painMoment":"“My payment is jumping hundreds per month. Is this offer actually competitive, and what does switching save after all costs?”",
+    "currentWorkaround":"Accept lender letter, use rate sites, call broker, build spreadsheet, refinance without full scenario comparison.",
+    "whyNow":"Bank of Canada says Toronto has a higher share of borrowers potentially unable to refinance if prices fall further; third-party 2026 modeling puts GTA renewal shocks among the country’s largest.",
+    "firstPaidTest":"Give 50 homeowners a free renewal shock calculation, then charge for an independent second-opinion report or earn a transparent broker referral.",
+    "priceHypothesis":"C$99–299 report or broker referral",
+    "dimensions":{"pain":4.4,"economics":4.6,"founderFit":3.5,"distribution":4.5,"insightGap":4.2,"solutionLeverage":4.8,"market":4.9,"validation":4.8},
+    "baseScore":87.6,"riskPenalty":8,"score":79.6,"priorityScore":78.7,"founderReturn":87,"confidence":4.6,
+    "riskNotes":["Mortgage advice is regulated.","Broker referral economics can compromise perceived independence."],
+    "fitNote":"Very strong calculator/data-product fit, but financial credibility and regulatory boundaries are significant. Best as comparison software or with a licensed mortgage partner.",
+    "evidence":[
+      {"title":"Bank of Canada Financial Stability Report 2026: Households","url":"https://www.bankofcanada.ca/publications/financial-stability-report/financial-stability-report-2026/households/","type":"official","note":"Discusses renewal/refinancing risk and specifically notes elevated Toronto vulnerability under further price declines."},
+      {"title":"2026 renewal wall modeling","url":"https://www.termrates.ca/mortgages/report","type":"market","note":"Models a median GTA payment increase of roughly C$611/month for representative 2021 five-year renewals."}
+    ]
+  },
+  {
+    "id":"tenant-case-builder","title":"Tenant evidence + LTB case builder","category":"Housing",
+    "wedge":"Guide a tenant from messy texts, photos, notices and timelines to an organized evidence package and procedural checklist for the LTB or legal clinic.",
+    "buyer":"Toronto renter in a dispute who cannot afford full legal representation.",
+    "painMoment":"“My landlord is doing something wrong, but I do not know what matters, what form applies or how to prove it.”",
+    "currentWorkaround":"Reddit, legal clinics, paralegals, self-representation, folders of screenshots.",
+    "whyNow":"LTB intake remains at record levels despite improving scheduling, and current renters still report confusing or invalid lease demands.",
+    "firstPaidTest":"Help 20 renters manually organize evidence and forms, then measure whether clinics/paralegals can review the package faster.",
+    "priceHypothesis":"C$49–199 case-prep fee; B2B2C legal-clinic model possible",
+    "dimensions":{"pain":4.7,"economics":2.8,"founderFit":4.2,"distribution":4.5,"insightGap":4.4,"solutionLeverage":4.5,"market":4.4,"validation":4.9},
+    "baseScore":83.4,"riskPenalty":5,"score":78.4,"priorityScore":77.7,"founderReturn":74,"confidence":4.7,
+    "riskNotes":["Legal-advice boundary.","Many target users have low ability to pay."],
+    "fitNote":"Strong fit for evidence organization, workflows and plain-language interfaces. Needs paralegal/legal-clinic co-design and should avoid legal conclusions.",
+    "evidence":[
+      {"title":"Tribunals Ontario 2026–29 business plan","url":"https://tribunalsontario.ca/documents/TO/TO_2026.27-2028.29_Business_Plan_EN.html","type":"official","note":"LTB intake reached record levels and case lifecycle targets remain challenging."},
+      {"title":"Toronto renter describes unusual lease demands","url":"https://www.reddit.com/r/TorontoRenting/comments/1tzl7su/are_most_toronto_landlords_insane_or_is_this_the/","type":"community","note":"Current example of renters unsure which clauses are enforceable and worried about LTB escalation."}
+    ]
+  }
+]
