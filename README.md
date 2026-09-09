@@ -2,11 +2,38 @@
 
 A living opportunity-ranking system for finding problems that hurt enough to matter and are tractable enough to test.
 
-The first market is Toronto. The current dataset contains 20 evidence-backed opportunities researched on 2026-09-08.
+The project now supports comparable country and city research. Toronto remains the deepest first market with 20 opportunities. The first geographic expansion adds New York, San Francisco, London, Berlin, Tallinn and Taipei with six evidence-backed opportunities each.
+
+## Geography
+
+Market atlas:
+
+- `/markets/`
+
+Country pages:
+
+- `/canada/`
+- `/united-states/`
+- `/united-kingdom/`
+- `/germany/`
+- `/estonia/`
+- `/taiwan/`
+
+City pages:
+
+- `/canada/toronto/`
+- `/united-states/new-york/`
+- `/united-states/san-francisco/`
+- `/united-kingdom/london/`
+- `/germany/berlin/`
+- `/estonia/tallinn/`
+- `/taiwan/taipei/`
+
+Country pages only aggregate cities that have actually been researched. A city sample is never presented as nationally representative.
 
 ## Scoring model
 
-Each opportunity receives a 0 to 5 score on eight dimensions, then a separate risk penalty and evidence-confidence adjustment.
+Each opportunity receives a 0 to 5 score on eight dimensions, then a separate risk penalty and evidence-confidence adjustment. The weights stay identical across cities so scores remain comparable.
 
 | Dimension | Weight |
 | --- | ---: |
@@ -115,14 +142,19 @@ complaint < search < existing spend < pays us < measurable result
 
 Desk-research rankings are starting hypotheses. Once experiments begin, observed paid behavior should dominate the ranking.
 
-## Structure
+## Research structure
 
-- `data/index.json` + `data/opportunities-*.json`: scored opportunities and source evidence
-- `index.html`: static dashboard shell
-- `styles.css`: visual system
-- `app.js`: filtering, ranking, scatter plot and evidence details
+- `data/index.json` + `data/opportunities-*.json`: deep Toronto dataset
+- `data/markets.json`: country/city atlas and additional city opportunities
+- `index.html`: Toronto dashboard
+- `city.html`: shared city dashboard template
+- `country.html`: shared country summary template
+- `markets/index.html`: cross-city market atlas
+- `app.js`: city-aware filtering, ranking, scatter plot and evidence details
+- `markets.js`: country/city aggregation and cross-city leaderboards
+- `styles.css` + `markets.css`: visual system
 - `methodology.md`: expanded scoring reference
-- `vercel.json`: deployment configuration
+- `vercel.json`: semantic country and city routes
 - `notes/`: durable findings that inform how opportunities are evaluated
 
 The original leverage/productivity finding that initialized this repository is preserved at `notes/leverage-and-productivity.md`.
