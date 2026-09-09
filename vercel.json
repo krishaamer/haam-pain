@@ -1,12 +1,28 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {"source":"/markets","destination":"/markets/index.html"},
+    {"source":"/canada","destination":"/country.html"},
+    {"source":"/united-states","destination":"/country.html"},
+    {"source":"/united-kingdom","destination":"/country.html"},
+    {"source":"/germany","destination":"/country.html"},
+    {"source":"/estonia","destination":"/country.html"},
+    {"source":"/taiwan","destination":"/country.html"},
+    {"source":"/canada/toronto","destination":"/city.html"},
+    {"source":"/united-states/new-york","destination":"/city.html"},
+    {"source":"/united-states/san-francisco","destination":"/city.html"},
+    {"source":"/united-kingdom/london","destination":"/city.html"},
+    {"source":"/germany/berlin","destination":"/city.html"},
+    {"source":"/estonia/tallinn","destination":"/city.html"},
+    {"source":"/taiwan/taipei","destination":"/city.html"}
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {"key":"X-Content-Type-Options","value":"nosniff"},
+        {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}
       ]
     }
   ]
