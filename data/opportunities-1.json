@@ -1,0 +1,100 @@
+[
+  {
+    "id": "condo-due-diligence",
+    "title": "Condo financial-risk diagnostic",
+    "category": "Housing",
+    "wedge": "Upload the status certificate, reserve-fund study, financials and minutes. Get a plain-language risk report before the offer condition expires.",
+    "buyer": "Condo buyer or investor about to commit hundreds of thousands of dollars.",
+    "painMoment": "“Am I buying into a building that is about to hit me with a huge fee increase, special assessment or litigation problem?”",
+    "currentWorkaround": "Lawyer review, realtor opinion, manual spreadsheet work, reading board minutes, asking residents.",
+    "whyNow": "Toronto condo buyers are increasingly focused on reserve-fund adequacy, while paid review services already validate C$350–599 willingness to pay.",
+    "firstPaidTest": "Sell a C$399 24-hour second-opinion report on one real status-certificate package. Human-reviewed, explicitly not legal advice.",
+    "priceHypothesis": "C$299–599 / report",
+    "dimensions": {"pain":4.4,"economics":4.5,"founderFit":4.6,"distribution":4.2,"insightGap":4.7,"solutionLeverage":4.8,"market":4.2,"validation":4.9},
+    "baseScore": 90.2,"riskPenalty": 2,"score": 88.2,"priorityScore": 87.4,"founderReturn": 91,"confidence": 4.7,
+    "riskNotes": ["Must avoid presenting the output as legal advice.","Competitive market already has document-review services."],
+    "fitNote": "Excellent fit for product design, document synthesis, AI-assisted analysis, information architecture and building a repeatable diagnostic. Domain credibility should come from a condo lawyer/accountant partner or reviewer.",
+    "evidence": [
+      {"title":"Condominium Authority of Ontario: Status Certificates","url":"https://www.condoauthorityontario.ca/condo-living/corporate-records/status-certificates/","type":"official","note":"Defines the financial, legal and reserve-fund information buyers receive."},
+      {"title":"Toronto Status Certificate Review pricing","url":"https://condoreview.brookstoneinspection.com/services/condo-document-review/toronto","type":"competitor","note":"Existing service lists C$350 standard and C$499 rush reviews, validating willingness to pay."},
+      {"title":"Toronto buyer asks whether reserve fund is worrying","url":"https://www.reddit.com/r/TorontoRealEstate/comments/1umx26b/does_this_condo_reserve_fund_worry_you/","type":"community","note":"Recent buyer confusion shows the exact interpretive pain."}
+    ]
+  },
+  {
+    "id": "childcare-orchestration",
+    "title": "Childcare waitlist orchestration",
+    "category": "Family",
+    "wedge": "One place to manage every daycare waitlist, follow-up date, subsidy status and commute constraint, with alerts when likely openings appear.",
+    "buyer": "Working parents returning from parental leave.",
+    "painMoment": "“We both return to work in a few months and we still do not know who will look after our child.”",
+    "currentWorkaround": "30 tabs, spreadsheets, repeated calls and emails, Facebook groups, private daycare as expensive fallback.",
+    "whyNow": "Toronto families report joining 20–30 lists. The official subsidy application still requires separate coordination with providers. A free directory is emerging, so the wedge must go beyond listings.",
+    "firstPaidTest": "Concierge 20 parents manually: maintain their waitlists, monthly follow-ups and backup options until a spot is secured.",
+    "priceHypothesis": "C$15–25/mo or C$149–299 concierge",
+    "dimensions": {"pain":4.9,"economics":3.1,"founderFit":4.7,"distribution":4.5,"insightGap":4.3,"solutionLeverage":4.7,"market":4.7,"validation":5.0},
+    "baseScore":87.7,"riskPenalty":3,"score":84.7,"priorityScore":84.4,"founderReturn":81,"confidence":4.9,
+    "riskNotes": ["Parents are already cost-pressured.","A free Toronto daycare directory launched in 2026, raising the bar for differentiation."],
+    "fitNote": "Very strong fit for data aggregation, workflow design, automation and a low-friction consumer interface. Limited domain-credibility barrier because the product coordinates information rather than giving regulated advice.",
+    "evidence": [
+      {"title":"Toronto child care fee subsidy process","url":"https://www.toronto.ca/community-people/employment-social-support/child-family-support/child-care-support/paying-your-fees-to-the-child-care-program/","type":"official","note":"Parents must still contact child-care programs they are interested in after joining the subsidy waitlist."},
+      {"title":"Parent describes 30+ waitlists and tracking chaos","url":"https://www.reddit.com/r/BabyBumpsCanada/comments/1t4stfa/why_is_finding_childcare_in_ontario_so/","type":"community","note":"Direct evidence of fragmentation and spreadsheet work."},
+      {"title":"Free Toronto daycare directory launch","url":"https://www.reddit.com/r/BabyBumpsCanada/comments/1v807lx/i_made_a_free_directory_of_toronto_daycares/","type":"competitor","note":"Shows demand and a new competitor; a paid product needs real-time orchestration rather than a directory."}
+    ]
+  },
+  {
+    "id":"renovation-preflight","title":"Renovation permit + contractor preflight","category":"Housing",
+    "wedge":"Before signing a contractor, map permit requirements, quote gaps, sequencing risks, licensing and likely change-order traps.",
+    "buyer":"Toronto homeowner planning a C$30k–300k renovation.",
+    "painMoment":"“I am about to spend six figures and I cannot tell whether the quote, permit path or contractor assumptions are safe.”",
+    "currentWorkaround":"Ask contractor, architect, friends or Reddit; compare inconsistent quotes manually.",
+    "whyNow":"Toronto explicitly leaves permit liability with the homeowner even when a contractor says no permit is needed. A new local renovation community appeared in 2026 around exactly these questions.",
+    "firstPaidTest":"Charge for one preflight on a real renovation quote set and property scope; return missing items, permit path and questions to resolve before deposit.",
+    "priceHypothesis":"C$750–2,000 / preflight",
+    "dimensions":{"pain":4.4,"economics":4.7,"founderFit":4.1,"distribution":4.1,"insightGap":4.4,"solutionLeverage":4.2,"market":4.4,"validation":4.8},
+    "baseScore":87.8,"riskPenalty":3,"score":84.8,"priorityScore":83.8,"founderReturn":88,"confidence":4.6,
+    "riskNotes":["Needs careful boundary between project guidance and professional architectural/engineering advice.","Local contractor reputation data can be messy."],
+    "fitNote":"Strong fit for systems analysis, document comparison, UX and structured decision support. Lower domain credibility than pure product work, but a licensed building professional could review edge cases.",
+    "evidence":[
+      {"title":"City of Toronto: Working Without a Permit","url":"https://www.toronto.ca/services-payments/building-construction/building-permit/after-you-apply-for-a-building-permit/building-inspections/working-without-a-permit/","type":"official","note":"Homeowner remains responsible and can face fees, work stoppage or reconstruction."},
+      {"title":"RenovationTO community launch","url":"https://www.reddit.com/r/RenovationTO/comments/1umf5n8/welcome_to_rrenovationto_pls_read_first/","type":"community","note":"New local community explicitly formed around permits, contractor recommendations, quote comparison and renovation headaches."}
+    ]
+  },
+  {
+    "id":"eldercare-command-center","title":"Eldercare diagnostic + coordination","category":"Family",
+    "wedge":"A family-facing care command centre: assess needs, map public eligibility, compare private care, assign sibling tasks, plan emergencies and keep coverage from collapsing.",
+    "buyer":"Adult child or spouse suddenly responsible for an older person.",
+    "painMoment":"“My parent cannot safely manage alone and I do not know what services exist, what we qualify for, who is trustworthy or what happens tomorrow.”",
+    "currentWorkaround":"Hospital social workers, Ontario Health atHome, agency calls, family spreadsheets, informal caregiver networks.",
+    "whyNow":"Toronto entered 2026 with an 18-month city homemaker/nursing waitlist and private PSW care commonly costs tens of dollars per hour. Current family posts show acute confusion and caregiver exhaustion.",
+    "firstPaidTest":"Sell a 90-minute eldercare diagnostic plus a written 30-day care plan; manually coordinate the first two provider handoffs.",
+    "priceHypothesis":"C$500–1,500 diagnostic + optional monthly coordination",
+    "dimensions":{"pain":5.0,"economics":4.4,"founderFit":3.5,"distribution":4.1,"insightGap":4.8,"solutionLeverage":3.7,"market":4.7,"validation":4.6},
+    "baseScore":87.8,"riskPenalty":4,"score":83.8,"priorityScore":83.3,"founderReturn":80,"confidence":4.8,
+    "riskNotes":["High trust burden.","Care mistakes can have health and safety consequences.","Human operations may limit margins unless software augments a care professional."],
+    "fitNote":"Strong fit for coordination systems, service design and turning fragmented information into action. Domain credibility is weak without a geriatric care manager, nurse or social-work partner.",
+    "evidence":[
+      {"title":"Toronto 2026 budget: 18-month Homemakers and Nurses waitlist","url":"https://www.toronto.ca/legdocs/mayoraldecisions/2026/mayor0001.pdf","type":"official","note":"City budget identifies an 18-month waitlist and funds its elimination."},
+      {"title":"Toronto Homemakers & Nurses Services","url":"https://www.toronto.ca/community-people/children-parenting/seniors-services/seniors-health-services/homemakers-and-nurses-services/","type":"official","note":"Shows multi-step eligibility, assessment and waitlist process."},
+      {"title":"Toronto caregiver asks where to find dementia evening care","url":"https://www.reddit.com/r/askTO/comments/1vfis03/elder_care_etobicoke/","type":"community","note":"Recent example of immediate sourcing and trust pain."}
+    ]
+  },
+  {
+    "id":"newcomer-career-conversion","title":"Newcomer career conversion","category":"Work",
+    "wedge":"Translate international seniority and evidence into Canadian-market credibility: positioning, proof, target-company map, introductions and interview calibration.",
+    "buyer":"Experienced recent immigrant who is unemployed or underemployed in Toronto.",
+    "painMoment":"“I was senior at home. Here I cannot even get considered for the same level.”",
+    "currentWorkaround":"Generic resume coaching, newcomer programs, mass applying, LinkedIn networking, credential services.",
+    "whyNow":"Ontario data still shows very recent immigrants with materially higher unemployment, while Toronto runs programs specifically for internationally experienced professionals with little Canadian experience.",
+    "firstPaidTest":"Take five experienced newcomers in one profession and sell an intensive conversion diagnostic tied to interviews generated within 30 days.",
+    "priceHypothesis":"C$500–2,000 / engagement",
+    "dimensions":{"pain":4.7,"economics":3.2,"founderFit":4.5,"distribution":4.6,"insightGap":4.2,"solutionLeverage":4.5,"market":4.7,"validation":4.8},
+    "baseScore":86.0,"riskPenalty":3,"score":83.0,"priorityScore":82.5,"founderReturn":80,"confidence":4.8,
+    "riskNotes":["Customers may have constrained cash during unemployment.","Career coaching is crowded and outcome attribution is noisy."],
+    "fitNote":"Strong fit for evidence-based positioning, product thinking, portfolio/communication critique, research and automation. Credibility depends on proving outcomes in a specific profession rather than claiming universal hiring expertise.",
+    "evidence":[
+      {"title":"City of Toronto newcomer job seekers program","url":"https://www.toronto.ca/community-people/employment-social-support/employment-support/newcomer-employment-seekers/","type":"official","note":"Explicitly targets people with international experience who are unemployed/underemployed and lack Canadian work experience."},
+      {"title":"Ontario Employment Report Q2 2026","url":"https://www.ontario.ca/document/ontario-employment-reports/april-june-2026","type":"official","note":"Very recent immigrants had a 10.5% unemployment rate versus 5.0% for Canadian-born core-aged workers."},
+      {"title":"Statistics Canada occupational match study","url":"https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026005/article/00004-eng.htm","type":"official","note":"Shows large occupation-matching gaps across professions."}
+    ]
+  }
+]
