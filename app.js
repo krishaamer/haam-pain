@@ -150,7 +150,7 @@ function openDetail(id) {
   const o = state.data.opportunities.find(x=>x.id===id);
   const rank = ranked().findIndex(x=>x.id===id)+1;
   const dims = Object.entries(o.dimensions).map(([k,v])=>`<div class="dimension"><span>${esc(DIMENSIONS[k]||k)}</span><div class="bar"><i style="width:${pct(v)}%"></i></div><b>${v.toFixed(1)}</b></div>`).join('');
-  const evidence = o.evidence.map(e=>`<li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.label || new URL(e.url).hostname)}</a><small>${esc(e.note || '')}</small></li>`).join('');
+  const evidence = o.evidence.map(e=>`<li><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title || e.label || new URL(e.url).hostname)}</a><small>${esc(e.note || '')}</small></li>`).join('');
   $('#detailContent').innerHTML = `<article class="detail">
     <span class="detail-kicker">#${String(rank).padStart(2,'0')} / ${esc(o.category)}</span>
     <h2>${esc(o.title)}</h2>
