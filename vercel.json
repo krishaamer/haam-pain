@@ -16,7 +16,9 @@
     {"source":"/united-kingdom/london","destination":"/city"},
     {"source":"/germany/berlin","destination":"/city"},
     {"source":"/estonia/tallinn","destination":"/city"},
-    {"source":"/taiwan/taipei","destination":"/city"}
+    {"source":"/taiwan/taipei","destination":"/city"},
+    {"source":"/canada/toronto/neighbourhoods","destination":"/neighbourhoods"},
+    {"source":"/canada/toronto/neighbourhoods/:slug","destination":"/neighbourhood"}
   ],
   "headers": [
     {"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}]}
