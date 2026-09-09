@@ -4,6 +4,9 @@
   "trailingSlash": false,
   "rewrites": [
     {"source":"/methodology","destination":"/methodology"},
+    {"source":"/industries/compare","destination":"/industry-compare"},
+    {"source":"/industries/:slug","destination":"/industry"},
+    {"source":"/:country/:city/industries/:industry","destination":"/industry-city"},
     {"source":"/canada","destination":"/country"},
     {"source":"/united-states","destination":"/country"},
     {"source":"/united-kingdom","destination":"/country"},
