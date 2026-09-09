@@ -1,0 +1,95 @@
+[
+  {
+    "id":"basement-flood-concierge","title":"Basement flood-risk + subsidy concierge","category":"Housing",
+    "wedge":"Property-specific flood-prevention preflight that combines risk assessment, eligible upgrades, contractor comparison and subsidy paperwork.",
+    "buyer":"Toronto homeowner with a basement, especially after a heavy-rain warning or neighbourhood flood.",
+    "painMoment":"“Could my basement flood, what should I install, which quote is sane, and will the city reimburse it?”",
+    "currentWorkaround":"Call plumbers, read City rules, compare quotes, fill subsidy forms after work.",
+    "whyNow":"Toronto nearly doubled its flood-protection subsidy to C$6,650 in May 2026 and added a subsidized home plumbing assessment, creating a very strong trigger and clear savings.",
+    "firstPaidTest":"Offer a C$199 remote risk preflight or C$499 concierge that gets two licensed quotes and prepares the subsidy checklist.",
+    "priceHypothesis":"C$199–499 + contractor referral economics",
+    "dimensions":{"pain":4.4,"economics":4.2,"founderFit":4.0,"distribution":4.3,"insightGap":4.1,"solutionLeverage":4.2,"market":4.0,"validation":4.9},
+    "baseScore":85.0,"riskPenalty":3,"score":82.0,"priorityScore":82.0,"founderReturn":82,"confidence":5.0,
+    "riskNotes":["Plumbers already advertise paperwork help, so differentiation must be independent quote comparison / risk diagnosis.","Physical work still depends on licensed contractors."],
+    "fitNote":"Good fit for a decision-support layer, subsidy workflow and contractor comparison. Needs plumbing expertise in the loop for the actual risk assessment.",
+    "evidence":[
+      {"title":"Toronto Basement Flooding Protection Subsidy Program","url":"https://www.toronto.ca/services-payments/water-environment/managing-rain-melted-snow/basement-flooding/basement-flooding-protection-subsidy-program/","type":"official","note":"Up to C$6,650/property, including a new C$500 plumbing assessment subsidy."},
+      {"title":"Toronto announcement expanding flood subsidies","url":"https://www.toronto.ca/news/city-of-toronto-to-almost-double-the-amount-of-basement-flooding-subsidies-starting-may-1/","type":"official","note":"Expansion follows severe rainfall events that flooded 1,000+ homes in 2024."},
+      {"title":"Example contractor already offering rebate paperwork help","url":"https://www.icyreno.ca/basement-flooding-protection-subsidy-program/","type":"competitor","note":"Shows existing bundled contractor competition."}
+    ]
+  },
+  {
+    "id":"restaurant-margin-rescue","title":"Restaurant margin diagnostic","category":"Business",
+    "wedge":"A fast operating-model teardown: menu contribution margins, labour, rent/TMI, delivery fees, waste and pricing, with a 30-day survival plan.",
+    "buyer":"Independent Toronto restaurant owner.",
+    "painMoment":"“Sales are not terrible, but cash keeps disappearing and I do not know which lever is killing us.”",
+    "currentWorkaround":"Bookkeeper/accountant, POS reports, gut feel, menu repricing, staffing cuts, promotions.",
+    "whyNow":"2026 reporting says rising costs continue to outrun sales growth and Toronto has seen a visible wave of closures and pivots.",
+    "firstPaidTest":"Take one restaurant’s POS exports, supplier invoices and labour schedule; deliver a contribution-margin map and three changes worth testing this month.",
+    "priceHypothesis":"C$1,500–5,000 / diagnostic",
+    "dimensions":{"pain":4.7,"economics":4.5,"founderFit":4.2,"distribution":3.6,"insightGap":4.0,"solutionLeverage":4.1,"market":4.2,"validation":4.5},
+    "baseScore":86.1,"riskPenalty":3,"score":83.1,"priorityScore":81.8,"founderReturn":86,"confidence":4.5,
+    "riskNotes":["Distressed restaurants may have little cash.","Requires accounting-quality data discipline.","Owners may resist operational changes."],
+    "fitNote":"Strong fit for data synthesis, business systems, dashboards, service design and identifying hidden process failures. Credibility can be built with one restaurant operator/accountant partner.",
+    "evidence":[
+      {"title":"Restaurants Canada Q2 2026 report coverage","url":"https://www.barandbeverage.com/news-releases/2584-rising-costs-outpace-sales-growth-eroding-restaurant-profitability-new-report-finds","type":"industry","note":"Reports that operating costs are outpacing revenue growth and eroding profitability."},
+      {"title":"Toronto CityNews: thousands of restaurants could shutter in 2026","url":"https://toronto.citynews.ca/2026/01/10/thousands-of-canadian-restaurants-could-shutter-in-2026-report/","type":"news","note":"Ontario expected to take a significant hit from the closure wave."},
+      {"title":"Toronto community discussion of 2026 closures","url":"https://www.reddit.com/r/askTO/comments/1utvqbs/why_have_so_many_restaurants_closedare_closing_in/","type":"community","note":"Local discussion repeatedly points to rent, customer demand and input costs."}
+    ]
+  },
+  {
+    "id":"student-housing-trust","title":"Student housing + roommate trust","category":"Housing",
+    "wedge":"Verified off-campus room and roommate matching with school affiliation, lease-risk checks and commute reality, not another generic rental listing board.",
+    "buyer":"Upper-year, graduate and international students around U of T and other downtown campuses.",
+    "painMoment":"“Residence is full. I need somewhere safe and affordable near campus, and I have no idea whether the room or roommate is legit.”",
+    "currentWorkaround":"Facebook groups, Marketplace, rentals.ca, university boards, friends, generic roommate apps.",
+    "whyNow":"U of T St. George has 71,000+ students but only 7,788 residence beds and is planning thousands more because demand exceeds supply.",
+    "firstPaidTest":"Manually place 20 students using verified listings and structured roommate interviews; charge only on successful match.",
+    "priceHypothesis":"C$49–149 verification or success fee",
+    "dimensions":{"pain":4.3,"economics":3.2,"founderFit":4.5,"distribution":4.7,"insightGap":4.1,"solutionLeverage":4.5,"market":4.8,"validation":5.0},
+    "baseScore":84.4,"riskPenalty":2,"score":82.4,"priorityScore":81.7,"founderReturn":80,"confidence":4.7,
+    "riskNotes":["Marketplace dynamics create trust and supply-side bootstrapping risk.","Students are price sensitive."],
+    "fitNote":"Very strong fit for marketplace UX, trust systems, identity verification, workflow design and student distribution. Operations become harder if it turns into a full brokerage.",
+    "evidence":[
+      {"title":"U of T student-housing initiative","url":"https://realestate.utoronto.ca/properties/harbord-and-college-mccaul-student-residences/","type":"official","note":"St. George has 71,000+ students and only 7,788 residence beds; demand exceeds supply."},
+      {"title":"U of T announces up to 5,500 new residence spaces","url":"https://www.utoronto.ca/news/new-paradigm-u-t-create-thousands-new-residence-spaces-innovative-building-model","type":"official","note":"August 2026 initiative explicitly responds to sustained housing demand."}
+    ]
+  },
+  {
+    "id":"therapy-match","title":"Therapist fit + affordability navigator","category":"Health",
+    "wedge":"Match people to therapists based on problem, modality, culture/language, price, insurance and actual availability, with a structured first-session fit check.",
+    "buyer":"Toronto resident ready to start therapy but overwhelmed by choice, price or poor fit.",
+    "painMoment":"“I finally decided I need help, but I cannot tell who is good for me and C$180–250 is too much to waste on bad-fit sessions.”",
+    "currentWorkaround":"Psychology Today, clinic directories, Reddit, insurer lists, repeated intake calls.",
+    "whyNow":"Recent Toronto posts show both price pain and difficulty finding a therapist who feels like a fit. The information exists but is fragmented.",
+    "firstPaidTest":"Manually match 25 people and collect post-first-session fit scores; monetize provider referrals only after proving trust.",
+    "priceHypothesis":"Consumer free/low-fee; provider lead or employer benefit model",
+    "dimensions":{"pain":4.8,"economics":3.5,"founderFit":3.7,"distribution":4.8,"insightGap":4.4,"solutionLeverage":4.4,"market":4.8,"validation":5.0},
+    "baseScore":86.3,"riskPenalty":4,"score":82.3,"priorityScore":81.1,"founderReturn":77,"confidence":4.5,
+    "riskNotes":["Health privacy and trust burden.","Referral monetization can create incentive conflicts.","Not suitable for crisis triage without clinical safeguards."],
+    "fitNote":"Strong fit for matching UX and information architecture, but clinical credibility is weak. Keep product to discovery/fit and involve licensed mental-health professionals in taxonomy and safety.",
+    "evidence":[
+      {"title":"CAMH psychotherapy overview","url":"https://www.camh.ca/en/health-info/mental-illness-and-addiction-index/psychotherapy","type":"official","note":"Private psychotherapy fees vary and are generally not OHIP-covered."},
+      {"title":"Toronto user asks how to find a good therapist","url":"https://www.reddit.com/r/askTO/comments/1w6m8zq/advice_on_finding_a_good_therapist_in_toronto/","type":"community","note":"September 2026 example of reaching a tipping point but failing to find a good fit."},
+      {"title":"Toronto user asks for affordable mental-health care","url":"https://www.reddit.com/r/askTO/comments/1tom0l0/any_affordable_mental_health_care_in_toronto/","type":"community","note":"Shows affordability as a distinct barrier."}
+    ]
+  },
+  {
+    "id":"auto-theft-defense","title":"Auto-theft risk audit","category":"Mobility",
+    "wedge":"Postal-code and vehicle-specific theft exposure audit with layered security plan, insurance implications and verified installer options.",
+    "buyer":"Toronto owner of a frequently stolen vehicle, especially SUV/pickup.",
+    "painMoment":"“My car might disappear from my driveway tonight and I do not know which anti-theft spend actually changes the odds.”",
+    "currentWorkaround":"Steering locks, trackers, immobilizers, bollards, insurance requirements, dealer advice, forum recommendations.",
+    "whyNow":"Toronto remained Ontario’s costliest city for auto-theft claims in 2025, with C$114.5M in claims costs reported by IBC, even as broader theft counts improved.",
+    "firstPaidTest":"Offer 50 C$149 vehicle/postal-code audits and partner with installers for only the measures recommended.",
+    "priceHypothesis":"C$149–399 audit + installation/referral margin",
+    "dimensions":{"pain":4.5,"economics":4.1,"founderFit":3.7,"distribution":4.2,"insightGap":3.8,"solutionLeverage":4.0,"market":4.1,"validation":4.8},
+    "baseScore":83.0,"riskPenalty":2,"score":81.0,"priorityScore":80.0,"founderReturn":79,"confidence":4.6,
+    "riskNotes":["Crowded hardware market.","Recommendations must be evidence-based to avoid false security."],
+    "fitNote":"Good fit for risk communication and productization, but not a natural domain-credibility fit. A vehicle-security expert or insurer partner would materially improve trust.",
+    "evidence":[
+      {"title":"Toronto Police auto-theft dashboard","url":"https://www.tps.ca/data-maps/data-analytics/auto-theft/","type":"official","note":"Official Toronto Police auto-theft data source."},
+      {"title":"Insurance Bureau of Canada 2025 theft-claim ranking","url":"https://www.newswire.ca/news-releases/ontario-s-top-10-costliest-cities-for-auto-theft-in-2025-895465300.html","type":"industry","note":"Toronto led Ontario at C$114.5M in theft claims costs for 2025."}
+    ]
+  }
+]
