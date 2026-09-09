@@ -1,0 +1,92 @@
+[
+  {
+    "id":"small-landlord-ops","title":"Small-landlord compliance + LTB ops","category":"Housing",
+    "wedge":"A landlord operating system for notices, payment history, maintenance records, deadlines and evidence, designed for one-to-five-unit owners.",
+    "buyer":"Small Toronto landlord who is not a professional property manager.",
+    "painMoment":"“I have one bad tenancy and suddenly I need to understand forms, deadlines, evidence and months of cash-flow exposure.”",
+    "currentWorkaround":"Spreadsheets, property managers, paralegals, ad-hoc templates and forum advice.",
+    "whyNow":"LTB applications remain at record volumes; non-payment applications make up more than half of cases and are still measured in weeks to first hearing.",
+    "firstPaidTest":"Enroll 10 landlords and run their records/notices through a structured workflow with a paralegal reviewing legal content.",
+    "priceHypothesis":"C$39–99/mo + paid filing support",
+    "dimensions":{"pain":4.2,"economics":4.3,"founderFit":4.0,"distribution":4.0,"insightGap":4.1,"solutionLeverage":4.2,"market":4.1,"validation":4.6},
+    "baseScore":83.5,"riskPenalty":5,"score":78.5,"priorityScore":77.6,"founderReturn":83,"confidence":4.6,
+    "riskNotes":["Legal-advice boundary.","Property-management software is crowded."],
+    "fitNote":"Good workflow/product fit, moderate distribution fit. A strong wedge would be Ontario-specific evidence readiness rather than generic property management.",
+    "evidence":[
+      {"title":"Tribunals Ontario 2026–29 business plan","url":"https://tribunalsontario.ca/documents/TO/TO_2026.27-2028.29_Business_Plan_EN.html","type":"official","note":"L1/L9 non-payment cases comprise more than half the LTB caseload and record intake persists."},
+      {"title":"Tribunals Ontario open data","url":"https://tribunalsontario.ca/en/about/open-data/","type":"official","note":"Publishes current hearing and queue-time reports, useful for measuring the pain."}
+    ]
+  },
+  {
+    "id":"fertility-navigation","title":"IVF cost + waitlist navigator","category":"Health",
+    "wedge":"Compare clinic waitlists, funded/private pathways, base fees, medication/add-on costs and dates in one decision timeline.",
+    "buyer":"Ontario/Toronto patient trying to start IVF on a time-sensitive schedule.",
+    "painMoment":"“I cannot tell which clinic can actually treat me when I need it, what is funded, or what the real all-in cycle cost will be.”",
+    "currentWorkaround":"Clinic calls, Reddit, spreadsheets, fertility doctor referrals, separate fee pages.",
+    "whyNow":"Toronto base IVF fees are commonly five figures and current 2026 patients actively compare funded wait times between downtown clinics.",
+    "firstPaidTest":"Manually build ten treatment-path comparisons using public fees and current clinic wait-time calls; charge for navigation, not medical recommendations.",
+    "priceHypothesis":"C$149–499 navigation package",
+    "dimensions":{"pain":5.0,"economics":4.5,"founderFit":3.2,"distribution":4.0,"insightGap":4.8,"solutionLeverage":4.1,"market":4.2,"validation":4.1},
+    "baseScore":86.5,"riskPenalty":8,"score":78.5,"priorityScore":77.3,"founderReturn":80,"confidence":4.5,
+    "riskNotes":["High health trust burden.","Cannot recommend treatment or interpret medical necessity without clinicians.","Waitlist data changes quickly."],
+    "fitNote":"Excellent information-design problem but weak health-domain credibility. Keep to logistics, cost and availability unless clinically partnered.",
+    "evidence":[
+      {"title":"Ontario government-funded fertility treatments","url":"https://www.ontario.ca/page/get-fertility-treatments","type":"official","note":"Defines Ontario funding eligibility and coverage."},
+      {"title":"Toronto IVF fee comparison","url":"https://fertilityfinder.ca/location/ontario/toronto/ivf-cost/","type":"market","note":"Current Toronto base-fee records cluster around roughly C$11.5k–14k before variable extras."},
+      {"title":"September 2026 funded IVF wait-time discussion","url":"https://www.reddit.com/r/IVF/comments/1w50lq4/funded_ivf_wait_times_in_ontario_canada/","type":"community","note":"Patient explicitly compares downtown Toronto clinics based on current wait time."}
+    ]
+  },
+  {
+    "id":"dental-coverage-navigator","title":"Dental coverage + clinic navigator","category":"Health",
+    "wedge":"Given income, age, insurance and treatment need, show which public/low-cost programs are available and the shortest realistic care path.",
+    "buyer":"Toronto resident delaying dental care because coverage and pricing are confusing.",
+    "painMoment":"“I know I need treatment, but I do not know what is covered, where I qualify, or how much I will pay.”",
+    "currentWorkaround":"Call 311/public health, search separate federal/provincial programs, dental-school clinics and individual offices.",
+    "whyNow":"Toronto now points residents across multiple overlapping programs, with separate eligibility rules and a list of low-cost facilities.",
+    "firstPaidTest":"Build a questionnaire that produces a verified care-path checklist and test it with community organizations before charging consumers.",
+    "priceHypothesis":"Likely B2B2C / benefits model; C$0–49 consumer",
+    "dimensions":{"pain":4.0,"economics":2.8,"founderFit":4.1,"distribution":4.5,"insightGap":4.2,"solutionLeverage":4.7,"market":4.6,"validation":5.0},
+    "baseScore":80.0,"riskPenalty":2,"score":78.0,"priorityScore":77.3,"founderReturn":75,"confidence":4.7,
+    "riskNotes":["Low direct willingness to pay among people most in need.","Health information must stay current."],
+    "fitNote":"Strong eligibility/workflow UX fit with low clinical-advice exposure. Better business model may be employers, nonprofits or clinics rather than charging patients.",
+    "evidence":[
+      {"title":"Toronto Dental & Oral Health Services","url":"https://www.toronto.ca/community-people/health-wellness-care/health-programs-advice/dental-and-oral-health-services/","type":"official","note":"Lists multiple government programs with different eligibility criteria."},
+      {"title":"Toronto low-cost dental facilities","url":"https://www.toronto.ca/community-people/health-wellness-care/health-programs-advice/dental-and-oral-health-services/low-cost-dental-facilities/","type":"official","note":"Current City directory of lower-cost treatment options."}
+    ]
+  },
+  {
+    "id":"home-accessibility-navigator","title":"Accessibility retrofit navigator","category":"Family",
+    "wedge":"Turn mobility needs and a home layout into a staged retrofit plan, grant/tax-credit map, contractor scope and quote comparison.",
+    "buyer":"Senior, disabled resident or adult child modifying a Toronto home for mobility.",
+    "painMoment":"“We need this home to be safe before the next fall, but I do not know what to change first or what help pays for it.”",
+    "currentWorkaround":"Occupational therapist, contractor, tax-credit research, family improvisation.",
+    "whyNow":"Toronto and federal/provincial programs provide multiple credits/supports while accessibility renovations can range from small modifications to major five-figure projects.",
+    "firstPaidTest":"Partner with an OT or accessibility contractor and sell a staged home-modification plan before any construction quote is accepted.",
+    "priceHypothesis":"C$500–1,500 plan + referral economics",
+    "dimensions":{"pain":4.8,"economics":4.1,"founderFit":3.7,"distribution":3.8,"insightGap":4.5,"solutionLeverage":3.8,"market":4.3,"validation":4.1},
+    "baseScore":84.1,"riskPenalty":5,"score":79.1,"priorityScore":77.2,"founderReturn":79,"confidence":4.2,
+    "riskNotes":["Safety-critical physical recommendations.","Needs OT/contractor credibility.","Some work requires permits/engineering."],
+    "fitNote":"Good service-design and prioritization fit, but safety/domain expertise must come from qualified accessibility professionals.",
+    "evidence":[
+      {"title":"City of Toronto senior health and home-care resources","url":"https://www.toronto.ca/community-people/children-parenting/seniors-services/seniors-health-services/","type":"official","note":"Lists Home Accessibility Tax Credit and Ontario Seniors Care at Home supports."},
+      {"title":"Toronto accessibility renovation pricing example","url":"https://renohouse.ca/services/handyman/accessibility-renovation","type":"market","note":"Shows real project scopes ranging from modest modifications to major five-figure retrofits."}
+    ]
+  },
+  {
+    "id":"family-doctor-navigation","title":"Primary-care + referral navigator","category":"Health",
+    "wedge":"Help unattached patients understand Health Care Connect, local team eligibility, walk-in continuity and referral records while waiting for attachment.",
+    "buyer":"Toronto/Ontario resident without a regular primary-care provider.",
+    "painMoment":"“I technically have access to health care, but I do not have one person who owns the thread.”",
+    "currentWorkaround":"Health Care Connect, walk-ins, virtual care, repeated histories, hospital/clinic referrals.",
+    "whyNow":"Ontario reported roughly 1.98M people unattached to primary care as of September 2025 while rapidly expanding attachment programs in 2026.",
+    "firstPaidTest":"Test a non-clinical navigation/record-prep service with 20 unattached patients and primary-care clinics.",
+    "priceHypothesis":"Low direct consumer fee; employer/clinic/insurer model",
+    "dimensions":{"pain":4.7,"economics":2.8,"founderFit":3.5,"distribution":4.3,"insightGap":4.5,"solutionLeverage":4.2,"market":4.8,"validation":4.6},
+    "baseScore":80.7,"riskPenalty":6,"score":74.7,"priorityScore":73.2,"founderReturn":70,"confidence":4.3,
+    "riskNotes":["Health privacy.","Cannot guarantee attachment or give medical advice.","Public system changes may reduce the pain over time."],
+    "fitNote":"Strong workflow and records fit, but business-model and health-domain credibility are weak. Better as infrastructure for providers/employers than direct-to-consumer.",
+    "evidence":[
+      {"title":"Ontario Primary Care Action Plan: 1-year update","url":"https://www.ontario.ca/page/ontarios-primary-care-action-plan-1-year-progress-update","type":"official","note":"Reports ~1.98M Ontarians unattached to primary care as of September 2025 and 2026 efforts to reduce the waitlist."}
+    ]
+  }
+]
