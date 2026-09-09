@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "market": "Toronto, Ontario",
+    "researchedAt": "2026-09-08",
+    "weights": {
+      "pain": 24,
+      "economics": 20,
+      "founderFit": 15,
+      "distribution": 11,
+      "insightGap": 10,
+      "solutionLeverage": 8,
+      "market": 6,
+      "validation": 6
+    },
+    "formula": "base = Σ(dimension/5 × weight); score = base − risk penalty; priority = score × (0.85 + 0.03 × evidence confidence)",
+    "founderProfile": {
+      "usedForFit": [
+        "end-to-end digital product design",
+        "interaction/service design",
+        "software prototyping",
+        "AI integration and automation",
+        "research and synthesis",
+        "information architecture",
+        "product strategy"
+      ],
+      "explicitlyNotAssumed": [
+        "medical licensure",
+        "legal licensure",
+        "mortgage/insurance licensure",
+        "professional caregiving credentials",
+        "deep Toronto trade/contractor reputation"
+      ]
+    }
+  },
+  "shards": [
+    "opportunities-1.json",
+    "opportunities-2.json",
+    "opportunities-3.json",
+    "opportunities-4.json"
+  ]
+}
