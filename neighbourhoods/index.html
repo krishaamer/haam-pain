@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HAAM Pain compares locally concentrated opportunity signals across researched Toronto neighbourhoods." />
+  <meta name="theme-color" content="#f2f0e8" />
+  <title>HAAM Pain - Toronto neighbourhood atlas</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/neighbourhoods.css" />
+</head>
+<body data-page="neighbourhoods">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="HAAM Pain home"><span class="brand-mark">H</span><span>HAAM PAIN</span></a>
+    <nav><a href="/canada/toronto">Toronto</a><a href="/compare?a=toronto">City compare</a><a href="#heatmap">Heatmap</a><a href="#areas">Areas</a></nav>
+  </header>
+  <main>
+    <section class="hero geo-hero local-hero">
+      <p class="eyebrow">TORONTO / NEIGHBOURHOOD PILOT</p>
+      <h1>Zoom into<br><em>the pain.</em></h1>
+      <p class="lede">A selective local layer for pains that genuinely vary by geography. Blank cells mean insufficient evidence, not low pain.</p>
+      <div class="geo-summary" id="localStats"></div>
+    </section>
+    <section class="section" id="heatmap">
+      <div class="section-head"><div><p class="eyebrow">LOCAL PAIN HEATMAP</p><h2>Where does it over-index?</h2></div><p class="section-note">Each row is a researched Toronto social-planning neighbourhood. Cells show local pain only where the evidence gate is met.</p></div>
+      <div class="local-heatmap-wrap"><div id="localHeatmap" class="local-heatmap"></div></div>
+    </section>
+    <section class="section" id="areas">
+      <div class="section-head"><div><p class="eyebrow">RESEARCHED AREAS</p><h2>Neighbourhood profiles</h2></div><p class="section-note">The pilot deliberately mixes student, condo, renter, family, high-income, newcomer and outer-city contexts.</p></div>
+      <div id="neighbourhoodGrid" class="market-grid"></div>
+    </section>
+    <section class="section">
+      <div class="section-head"><div><p class="eyebrow">STRONGEST LOCAL WEDGES</p><h2>Launch zones</h2></div><p class="section-note">Highest local scores across the pilot, not prevalence estimates.</p></div>
+      <div id="localLeaders" class="leaderboard"></div>
+    </section>
+  </main>
+  <footer><span>HAAM / PAIN</span><span id="footerMeta">Toronto neighbourhood research.</span></footer>
+  <script src="/neighbourhoods.js" defer></script>
+</body>
+</html>
