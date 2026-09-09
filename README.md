@@ -1,65 +1,130 @@
 # HAAM Pain
 
-## Finding: where your work plugs in matters as much as how good you are
+A living opportunity-ranking system for finding problems that hurt enough to matter and are tractable enough to test.
 
-A major difference in compensation between Estonia, Toronto, and New York is not simply that workers in one place are more capable or work harder.
+The first market is Toronto. The current dataset contains 20 evidence-backed opportunities researched on 2026-09-08.
 
-The more important variable is **the economic system around the worker**: the scale of the market, the amount of capital behind each person, the profitability of the firms competing for talent, and how much value a single good decision can affect.
+## Scoring model
 
-The same product designer, engineer, or operator can therefore be worth very different amounts in different markets without becoming a different person.
+Each opportunity receives a 0 to 5 score on eight dimensions, then a separate risk penalty and evidence-confidence adjustment.
 
-### What this means
+| Dimension | Weight |
+| --- | ---: |
+| Pain | 24 |
+| Economics | 20 |
+| Founder fit | 15 |
+| Distribution | 11 |
+| Insight gap | 10 |
+| Solution leverage | 8 |
+| Market quality | 6 |
+| Validation speed | 6 |
+| **Total upside** | **100** |
 
-Income is partly a function of skill, but also of **leverage**.
+Formula:
 
-A person working on a local, low-margin product may only be able to influence tens of thousands of euros of value. A person with comparable ability inside a global software, AI, infrastructure, fintech, or financial company may influence millions.
+```text
+base = sum(dimension / 5 * weight)
+score = base - risk penalty
+priority = score * (0.85 + 0.03 * evidence confidence)
+```
 
-That changes what it is economically rational to pay them.
+Evidence confidence is deliberately a modest adjustment. The goal is to rank hypotheses while making uncertainty visible, not to reward whichever market has the most published reports.
 
-This helps explain why high-end US salaries can be dramatically above Estonian or Canadian salaries. The US combines:
+Founder return is tracked separately:
 
-- a huge relatively unified home market
-- globally scaled technology and financial firms
-- unusually deep equity and venture-capital markets
-- high capital investment per worker
-- intense competition for scarce technical and product talent
-- a willingness to distribute more of the upside through individual compensation
+```text
+founder return = economics * 40% + founder fit * 30% + leverage * 20% + market * 10%
+```
 
-The relevant question is therefore not only:
+### Founder-fit discipline
 
-> How do I become better at my work?
+Founder fit splits two questions that are easy to conflate:
 
-It is also:
+1. **Capability fit:** can HAAM research, design, prototype, automate, synthesize and ship a useful intervention?
+2. **Domain credibility:** would the buyer trust HAAM in this domain today, and what expert partnerships or credentials would be required?
 
-> **How much value can one excellent person create here?**
+A recent conversation topic is not evidence of founder fit.
 
-If the answer is a few thousand euros, compensation will eventually hit a ceiling. If the answer is millions, six-figure or even seven-figure compensation can become economically rational.
+## Hard gates
 
-## Implication for HAAM
+Before ranking, an opportunity should have:
 
-Do not optimize primarily for the top of the Estonian salary distribution.
+- an identifiable buyer
+- ability to pay, or an identifiable sponsor who can pay
+- an ethically acceptable intervention
+- a legally feasible manual test
+- reachable users
+- an observable outcome
 
-A stronger model is:
+## What to measure inside each dimension
 
-**Estonian cost base + US/global customers + high-value problems + scalable software/AI leverage.**
+### Pain
 
-In practice this means:
+Intensity, urgency, frequency, consequences, emotional load and confusion.
 
-1. **Sell into high-productivity markets.** Geography of residence and geography of revenue do not need to be the same.
-2. **Choose high-leverage problems.** Prefer work where one decision can materially affect large revenue streams, costly operations, or products used at scale.
-3. **Attach to productive systems.** Company economics matter. Revenue per employee, margins, market size, distribution, capital, and pricing power can matter more than prestige.
-4. **Build assets that scale without proportional labor.** Software, agents, APIs, data systems, reusable infrastructure, and IP are preferable to indefinitely selling hours.
-5. **Treat market selection as a career skill.** Becoming 20% better at a craft may produce a modest increase in compensation. Moving the same skill into a much higher-leverage system can produce a multiple.
+### Economics
 
-## A useful opportunity filter
+Current spending, willingness to pay, value created or loss avoided, gross margin potential, repeatability and acquisition or sales efficiency.
 
-For a job, client, product, or new HAAM project, ask:
+### Founder fit
 
-- What does one excellent person's work change here?
-- How much economic value sits downstream of that work?
-- Is the customer local or global?
-- Can the output scale without adding people proportionally?
-- Is this company/product in a market that can pay for the value created?
-- Am I capturing some of that leverage, or merely supplying cheap labor into it?
+Existing competence, transferable competence, technical leverage, research edge, domain credibility, sales credibility and willingness to stay with the problem long enough to get unusually good.
 
-The goal is not maximum salary at any cost. It is to place scarce capability inside systems where that capability has unusually large consequences, while preserving as much of the resulting upside as possible.
+### Distribution
+
+Audience concentration, reachability, trigger detectability, trust channels, acquisition cost and word of mouth.
+
+### Insight gap
+
+Misdiagnosis, information asymmetry, fragmentation, bad incentives, invisible feedback, tacit expertise and newly possible solutions.
+
+### Solution leverage
+
+Automation potential, reusable data, marginal cost, intervention efficiency and time to outcome.
+
+### Market quality
+
+Buyer count, growth, structural durability, spend growth, competitive intensity and incumbent quality.
+
+### Validation speed
+
+Can we find sufferers now, inspect real artifacts, sell a manual solution before building software and measure whether it worked?
+
+## Type-specific pain metrics
+
+Different pains need different secondary measures.
+
+- **Consumer emotional:** shame, identity threat, hope, privacy, urgency and willingness to seek help.
+- **Financial:** money at risk, probability of loss, decision frequency, information asymmetry and quantifiable ROI.
+- **Career:** income delta, duration of unemployment or underemployment, status impact and measurable outcome.
+- **B2B:** revenue loss, cost savings, executive visibility, budget owner, switching cost and procurement difficulty.
+- **Health:** severity, uncertainty, time sensitivity, fragmentation and current spend, with explicit clinical and regulatory penalties.
+- **Life admin:** number of actors, deadlines, money at stake, fragmentation, catastrophic failure modes and cognitive burden.
+
+## Risk penalties
+
+Risk stays outside the 100-point upside score. Typical penalties include regulation or clinical liability, trust barriers, capital intensity, marketplace chicken-and-egg dynamics, platform dependence, ethical or reputational risk and very long time to outcome.
+
+## Evidence standard
+
+The evidence ladder is:
+
+```text
+complaint < search < existing spend < pays us < measurable result
+```
+
+Desk-research rankings are starting hypotheses. Once experiments begin, observed paid behavior should dominate the ranking.
+
+## Structure
+
+- `data/index.json` + `data/opportunities-*.json`: scored opportunities and source evidence
+- `index.html`: static dashboard shell
+- `styles.css`: visual system
+- `app.js`: filtering, ranking, scatter plot and evidence details
+- `methodology.md`: expanded scoring reference
+- `vercel.json`: deployment configuration
+- `notes/`: durable findings that inform how opportunities are evaluated
+
+The original leverage/productivity finding that initialized this repository is preserved at `notes/leverage-and-productivity.md`.
+
+No build step or runtime dependency is required.
