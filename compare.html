@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Compare the shape of evidence-backed pain opportunities across researched cities using the same HAAM Pain scoring system." />
+  <meta name="theme-color" content="#f2f0e8" />
+  <title>HAAM Pain - city comparisons</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/markets.css" />
+  <link rel="stylesheet" href="/compare.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="HAAM Pain home"><span class="brand-mark">H</span><span>HAAM PAIN</span></a>
+    <nav><a href="/markets/">Markets</a><a href="/compare" aria-current="page">Compare</a><a href="#mix">Issue mix</a><a href="#matrix">Matrix</a><a href="/methodology">Method</a></nav>
+  </header>
+
+  <main>
+    <section class="hero geo-hero compare-hero">
+      <p class="eyebrow">CITY COMPARISON / RESEARCHED OPPORTUNITIES</p>
+      <h1>Same world.<br><em>Different pain.</em></h1>
+      <p class="lede">Compare what rises to the top in each city, where the economics differ, and which issue categories are unusually concentrated in our current research sample.</p>
+      <div class="compare-warning">This compares the opportunity research, not population prevalence. A 33% housing share means 33% of the opportunities we researched in that city are housing-related.</div>
+    </section>
+
+    <section class="section compare-picker" id="pair">
+      <div class="section-head">
+        <div><p class="eyebrow">PAIRWISE</p><h2>City vs city</h2></div>
+        <p class="section-note">Pick any two researched cities. The URL updates so a comparison can be shared directly.</p>
+      </div>
+      <div class="pair-controls">
+        <label><span>City A</span><select id="cityA"></select></label>
+        <button id="swapCities" type="button" aria-label="Swap cities">⇄</button>
+        <label><span>City B</span><select id="cityB"></select></label>
+      </div>
+      <div id="pairHeadline" class="pair-headline"></div>
+      <div id="pairInsights" class="insight-grid"></div>
+      <div class="compare-columns">
+        <article><p class="eyebrow" id="topAKicker">CITY A LEADER</p><div id="topA"></div></article>
+        <article><p class="eyebrow" id="topBKicker">CITY B LEADER</p><div id="topB"></div></article>
+      </div>
+      <div class="dimension-compare">
+        <div class="section-subhead"><h3>Score profile</h3><p>Average 0-5 dimension scores across each city's researched opportunities.</p></div>
+        <div id="dimensionCompare"></div>
+      </div>
+    </section>
+
+    <section class="section" id="mix">
+      <div class="section-head">
+        <div><p class="eyebrow">ISSUE MIX</p><h2>What kind of pain?</h2></div>
+        <p class="section-note">Each row sums to 100%. Darker cells mean that category occupies more of that city's researched opportunity set.</p>
+      </div>
+      <div class="mix-wrap"><div id="mixTable" class="mix-table"></div></div>
+    </section>
+
+    <section class="section" id="signatures">
+      <div class="section-head">
+        <div><p class="eyebrow">SIGNATURE PAINS</p><h2>What stands out?</h2></div>
+        <p class="section-note">A city's signature is the category whose share most exceeds the equal-weight cross-city baseline.</p>
+      </div>
+      <div id="signatureGrid" class="signature-grid"></div>
+    </section>
+
+    <section class="section" id="matrix">
+      <div class="section-head">
+        <div><p class="eyebrow">CITY MATRIX</p><h2>One screen, seven cities</h2></div>
+        <p class="section-note">Useful for spotting high-pain but low-economics cities, unusually risky markets, and places where HAAM's capabilities fit particularly well.</p>
+      </div>
+      <div class="matrix-wrap"><div id="cityMatrix" class="city-matrix"></div></div>
+      <p class="geo-note">All city-level averages weight opportunities equally within that city. Atlas baselines weight cities equally so a larger research sample does not dominate.</p>
+    </section>
+  </main>
+
+  <footer><span>HAAM / PAIN</span><span id="footerMeta">Comparing research samples, not people.</span></footer>
+  <script src="/compare.js" defer></script>
+</body>
+</html>
