@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HAAM Pain neighbourhood research compares locally concentrated pain signals against the Toronto city baseline." />
+  <meta name="theme-color" content="#f2f0e8" />
+  <title>HAAM Pain - Toronto neighbourhood</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/neighbourhoods.css" />
+</head>
+<body data-page="neighbourhood">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="HAAM Pain home"><span class="brand-mark">H</span><span>HAAM PAIN</span></a>
+    <nav><a href="/canada/toronto">Toronto</a><a href="/canada/toronto/neighbourhoods">Neighbourhoods</a><a href="#signals">Local signals</a><a href="#evidence">Method</a></nav>
+  </header>
+  <main>
+    <section class="hero geo-hero local-hero">
+      <p class="eyebrow" id="localEyebrow">TORONTO / NEIGHBOURHOOD</p>
+      <h1 id="localTitle">Local<br><em>pain map.</em></h1>
+      <p class="lede" id="localLede">Where a city-level pain becomes unusually concentrated.</p>
+      <div class="geo-summary" id="localStats"></div>
+    </section>
+    <section class="section" id="signals">
+      <div class="section-head"><div><p class="eyebrow">LOCAL OVER-INDEX</p><h2>What hurts more here?</h2></div><p class="section-note">Over-index = local pain minus the Toronto parent-opportunity pain score. Positive values mean this research suggests unusually concentrated local pain.</p></div>
+      <div class="local-ranking" id="localRanking"></div>
+    </section>
+    <section class="section" id="evidence">
+      <div class="section-head"><div><p class="eyebrow">EVIDENCE GATE</p><h2>Local, not fake-precise.</h2></div><p class="section-note" id="localWarning"></p></div>
+      <div class="method-grid local-method">
+        <article><span class="method-num">30%</span><h3>Local pain</h3><p>How acute this specific pain appears inside the neighbourhood.</p></article>
+        <article><span class="method-num">25%</span><h3>Economics</h3><p>Inherited from the parent city opportunity, so local concentration does not erase willingness-to-pay reality.</p></article>
+        <article><span class="method-num">25%</span><h3>Concentration</h3><p>How geographically specific the trigger, asset type, population or failure mode is.</p></article>
+        <article><span class="method-num">20%</span><h3>Confidence</h3><p>Signals need at least two evidence items and confidence of 3.5/5 to rank.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><span>HAAM / PAIN</span><span id="footerMeta">Neighbourhood research, not prevalence statistics.</span></footer>
+  <dialog id="localDialog" class="detail-dialog"><button class="dialog-close" id="dialogClose" aria-label="Close details">×</button><div id="localDetail"></div></dialog>
+  <script src="/neighbourhoods.js" defer></script>
+</body>
+</html>
