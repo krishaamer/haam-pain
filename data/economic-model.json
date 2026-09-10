@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "status": "scenario-not-prediction",
+  "taskWeighting": "equal-proxy-until-measured",
+  "defaultPriceShareOfExposure": 0.10,
+  "valueHurdleMultiple": 3,
+  "presets": {
+    "conservative": {
+      "addressable": 0.30,
+      "success": 0.45,
+      "adoption": 0.50
+    },
+    "base": {
+      "addressable": 0.50,
+      "success": 0.65,
+      "adoption": 0.70
+    },
+    "upside": {
+      "addressable": 0.70,
+      "success": 0.80,
+      "adoption": 0.85
+    }
+  },
+  "notes": {
+    "addressable": "Share of the painful workflow the intervention can realistically touch.",
+    "success": "Share of covered work where the intervention produces a useful result.",
+    "adoption": "Share of eligible moments where the workflow actually uses the intervention.",
+    "effectiveCoverage": "addressable × success × adoption",
+    "recoverableValue": "annual pain exposure proxy × effective coverage"
+  }
+}
