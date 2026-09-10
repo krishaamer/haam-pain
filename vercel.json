@@ -4,6 +4,10 @@
   "trailingSlash": false,
   "rewrites": [
     {"source":"/methodology","destination":"/methodology"},
+    {"source":"/episodes/compare","destination":"/episode-compare"},
+    {"source":"/episodes/:id","destination":"/episode"},
+    {"source":"/archetypes/:slug","destination":"/archetype"},
+    {"source":"/research","destination":"/experiments/index"},
     {"source":"/industries/compare","destination":"/industry-compare"},
     {"source":"/industries/:slug","destination":"/industry"},
     {"source":"/:country/:city/industries/:industry","destination":"/industry-city"},

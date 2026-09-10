@@ -1,39 +1,60 @@
 # HAAM Pain
 
-A living opportunity-ranking system for finding problems that hurt enough to matter and are tractable enough to test.
+A living research system for finding problems that hurt enough to matter, are valuable enough to pay for, and are concrete enough to test.
 
-The project now supports comparable country and city research. Toronto remains the deepest first market with 20 opportunities. The first geographic expansion adds New York, San Francisco, London, Berlin, Tallinn and Taipei with six evidence-backed opportunities each.
+The project has four connected levels:
 
-## Geography
+```text
+Geography -> broad opportunity -> pain episode -> paid experiment
+Industry  -> broad opportunity -> pain episode -> paid experiment
+                         \-> archetype -> transfer to other contexts
+```
 
-Market atlas:
+Broad scores answer **where should we look?** Pain episodes answer **who exactly is hurting, when, why, how much, and what can we test next?**
 
-- `/markets/`
+## Main surfaces
 
-Country pages:
+- `/markets` - countries and researched cities
+- `/compare` - city comparisons
+- `/canada/toronto/neighbourhoods` - Toronto neighbourhood pilot
+- `/industries` - 12-industry opportunity atlas
+- `/industries/compare` - industry comparison
+- `/:country/:city/industries/:industry` - city x industry composite launch hypotheses
+- `/episodes` - intervention-ready pain episodes
+- `/episodes/:id` - actor, trigger, mechanism, economics, workflow and experiment
+- `/episodes/compare` - counterfactual episode comparison
+- `/archetypes` - recurring pain mechanisms across domains
+- `/archetypes/:slug` - same mechanism across different contexts
+- `/experiments` or `/research` - research queue ranked by information gain
 
-- `/canada/`
-- `/united-states/`
-- `/united-kingdom/`
-- `/germany/`
-- `/estonia/`
-- `/taiwan/`
+## Geographic research
 
-City pages:
+The current city set is Toronto, New York, San Francisco, London, Berlin, Tallinn and Taipei. Country pages aggregate only cities that have actually been researched and do not claim national representativeness.
 
-- `/canada/toronto/`
-- `/united-states/new-york/`
-- `/united-states/san-francisco/`
-- `/united-kingdom/london/`
-- `/germany/berlin/`
-- `/estonia/tallinn/`
-- `/taiwan/taipei/`
+Toronto also has a neighbourhood pilot using official social-planning neighbourhoods. Local signals require at least two evidence items and sufficient confidence; missing evidence is not scored as low pain.
 
-Country pages only aggregate cities that have actually been researched. A city sample is never presented as nationally representative.
+## Industry research
 
-## Scoring model
+The current industry set is:
 
-Each opportunity receives a 0 to 5 score on eight dimensions, then a separate risk penalty and evidence-confidence adjustment. The weights stay identical across cities so scores remain comparable.
+- Architecture / AEC
+- Medicine
+- Construction
+- Restaurants / hospitality
+- Legal
+- Accounting / tax
+- Property management
+- Education
+- Logistics
+- Manufacturing
+- Retail
+- Professional software
+
+Industry research contains 60 direct evidence-backed opportunity hypotheses. City x industry pages are **composites**, not locally validated industry studies: 70% industry evidence plus 30% independently researched city context.
+
+## Broad opportunity score
+
+City opportunities use eight dimensions:
 
 | Dimension | Weight |
 | --- | ---: |
@@ -47,116 +68,128 @@ Each opportunity receives a 0 to 5 score on eight dimensions, then a separate ri
 | Validation speed | 6 |
 | **Total upside** | **100** |
 
-Formula:
+Risk stays outside the upside score so regulation, liability, trust and operational complexity remain visible.
 
 ```text
 base = sum(dimension / 5 * weight)
 score = base - risk penalty
-priority = score * (0.85 + 0.03 * evidence confidence)
+priority = score * evidence adjustment
 ```
 
-Evidence confidence is deliberately a modest adjustment. The goal is to rank hypotheses while making uncertainty visible, not to reward whichever market has the most published reports.
+Industry scoring adds workflow frequency, economic leverage, failure cost, labor intensity, fragmentation, AI leverage and data availability. See `notes/industry-method.md`.
 
-Founder return is tracked separately:
+## Pain episodes
+
+A broad opportunity becomes actionable only when it is decomposed into a pain episode.
+
+Every episode should identify:
+
+- actor and context
+- job to be done
+- detectable trigger
+- real work artifacts
+- surface complaint
+- believed cause
+- hidden mechanism
+- workflow and broken handoffs
+- actors, incentives and power
+- time exposure and money at risk
+- existing spend stack
+- buyer and budget owner
+- distribution tied to the trigger
+- competitor coverage and workflow gaps
+- narrow intervention
+- first paid experiment
+- success metric
+- kill criterion
+- evidence claims with epistemic status
+
+Current episode data lives in `data/episodes/*.json` and is indexed by `data/episodes-index.json`.
+
+## Claim ledger
+
+Every material episode claim is marked as:
+
+- `measured` - directly supported by a source or dataset
+- `reported` - a credible source reports it
+- `inferred` - HAAM's interpretation of observations
+- `hypothesized` - deliberately awaiting a test
+
+The UI should never make an inferred mechanism look like measured prevalence.
+
+## Information Gain
+
+Opportunity score asks how attractive an opportunity currently looks.
+
+**Information Gain** asks how much the next realistic experiment could change the decision to pursue, reshape or kill it.
+
+This creates a separate research queue. A slightly lower-scoring market may deserve immediate investigation when one afternoon with five real artifacts can resolve its biggest uncertainty.
+
+## Artifact-first research
+
+Prefer inspecting what actually happened over relying only on interviews.
+
+Useful artifacts include status certificates, contracts, permit comments, RFIs, submittals, prior-authorization packets, denial letters, POS exports, invoices, schedules, work orders, prompts, AI outputs, pull requests, review traces, client request lists and email threads.
+
+Interviews reveal beliefs. Artifacts reveal mechanisms.
+
+## Trigger-first distribution
+
+Every episode asks when pain becomes acute and whether that moment is detectable.
+
+Examples include a status package arriving, parental leave ending, a contractor requesting a deposit, a hospital discharge date, an out-of-scope client request, a PA denial, a container free-time clock, or an AI-authored pull request entering review.
+
+A detectable trigger can matter as much as market size because it makes customer acquisition precise.
+
+## Archetypes
+
+Current cross-domain mechanisms include:
+
+- high-stakes document interpretation
+- deadline-driven bureaucracy
+- fragmented entitlement navigation
+- multi-party coordination collapse
+- scope and revenue leakage
+- invisible operational leakage
+- AI trust and governance gap
+- exception overload
+
+Archetypes are intended for transfer: if one intervention works, search for the same mechanism in another domain with better economics, distribution or founder fit.
+
+## Experiment standard
+
+Every intervention-ready episode ends with:
 
 ```text
-founder return = economics * 40% + founder fit * 30% + leverage * 20% + market * 10%
+Who
+Trigger
+Artifact
+Offer
+Price
+Sample
+Success
+Kill
+Timebox
 ```
 
-### Founder-fit discipline
+The kill criterion is mandatory. Once paid behavior exists, it should dominate desk research.
 
-Founder fit splits two questions that are easy to conflate:
-
-1. **Capability fit:** can HAAM research, design, prototype, automate, synthesize and ship a useful intervention?
-2. **Domain credibility:** would the buyer trust HAAM in this domain today, and what expert partnerships or credentials would be required?
-
-A recent conversation topic is not evidence of founder fit.
-
-## Hard gates
-
-Before ranking, an opportunity should have:
-
-- an identifiable buyer
-- ability to pay, or an identifiable sponsor who can pay
-- an ethically acceptable intervention
-- a legally feasible manual test
-- reachable users
-- an observable outcome
-
-## What to measure inside each dimension
-
-### Pain
-
-Intensity, urgency, frequency, consequences, emotional load and confusion.
-
-### Economics
-
-Current spending, willingness to pay, value created or loss avoided, gross margin potential, repeatability and acquisition or sales efficiency.
-
-### Founder fit
-
-Existing competence, transferable competence, technical leverage, research edge, domain credibility, sales credibility and willingness to stay with the problem long enough to get unusually good.
-
-### Distribution
-
-Audience concentration, reachability, trigger detectability, trust channels, acquisition cost and word of mouth.
-
-### Insight gap
-
-Misdiagnosis, information asymmetry, fragmentation, bad incentives, invisible feedback, tacit expertise and newly possible solutions.
-
-### Solution leverage
-
-Automation potential, reusable data, marginal cost, intervention efficiency and time to outcome.
-
-### Market quality
-
-Buyer count, growth, structural durability, spend growth, competitive intensity and incumbent quality.
-
-### Validation speed
-
-Can we find sufferers now, inspect real artifacts, sell a manual solution before building software and measure whether it worked?
-
-## Type-specific pain metrics
-
-Different pains need different secondary measures.
-
-- **Consumer emotional:** shame, identity threat, hope, privacy, urgency and willingness to seek help.
-- **Financial:** money at risk, probability of loss, decision frequency, information asymmetry and quantifiable ROI.
-- **Career:** income delta, duration of unemployment or underemployment, status impact and measurable outcome.
-- **B2B:** revenue loss, cost savings, executive visibility, budget owner, switching cost and procurement difficulty.
-- **Health:** severity, uncertainty, time sensitivity, fragmentation and current spend, with explicit clinical and regulatory penalties.
-- **Life admin:** number of actors, deadlines, money at stake, fragmentation, catastrophic failure modes and cognitive burden.
-
-## Risk penalties
-
-Risk stays outside the 100-point upside score. Typical penalties include regulation or clinical liability, trust barriers, capital intensity, marketplace chicken-and-egg dynamics, platform dependence, ethical or reputational risk and very long time to outcome.
-
-## Evidence standard
-
-The evidence ladder is:
+## Evidence ladder
 
 ```text
-complaint < search < existing spend < pays us < measurable result
+complaint < search < observed workaround < existing spend < pays us < measurable result < repeatable result
 ```
 
-Desk-research rankings are starting hypotheses. Once experiments begin, observed paid behavior should dominate the ranking.
+## Research files
 
-## Research structure
-
-- `data/index.json` + `data/opportunities-*.json`: deep Toronto dataset
-- `data/markets.json`: country/city atlas and additional city opportunities
-- `index.html`: Toronto dashboard
-- `city.html`: shared city dashboard template
-- `country.html`: shared country summary template
-- `markets/index.html`: cross-city market atlas
-- `app.js`: city-aware filtering, ranking, scatter plot and evidence details
-- `markets.js`: country/city aggregation and cross-city leaderboards
-- `styles.css` + `markets.css`: visual system
-- `methodology.md`: expanded scoring reference
-- `vercel.json`: semantic country and city routes
-- `notes/`: durable findings that inform how opportunities are evaluated
-
-The original leverage/productivity finding that initialized this repository is preserved at `notes/leverage-and-productivity.md`.
+- `data/index.json` + `data/opportunities-*.json` - Toronto broad opportunity dataset
+- `data/markets.json` - country and city research
+- `data/toronto-neighbourhoods-*.json` - Toronto local signals
+- `data/industries-*.json` - industry opportunities
+- `data/episodes-index.json` - episode index, source links and archetypes
+- `data/episodes/*.json` - intervention-ready episodes
+- `notes/pain-episode-method.md` - episode methodology
+- `notes/industry-method.md` - industry methodology
+- `notes/leverage-and-productivity.md` - original leverage finding
 
 No build step or runtime dependency is required.
