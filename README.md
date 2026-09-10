@@ -193,3 +193,21 @@ complaint < search < observed workaround < existing spend < pays us < measurable
 - `notes/leverage-and-productivity.md` - original leverage finding
 
 No build step or runtime dependency is required.
+
+## Task-level economic scenarios
+
+Episode pages now include a customer-level scenario model inspired by task-based economic modeling. The model keeps the interface simple while making the assumptions underneath the value estimate explicit.
+
+```text
+effective pain coverage
+= addressable workflow × intervention success × workflow adoption
+
+recoverable annual value
+= annual pain exposure proxy × effective pain coverage
+```
+
+The default scenarios are editable in `data/economic-model.json`. The UI exposes conservative, base and upside assumptions, an assumed annual price, break-even effective coverage, and a 3× customer-value hurdle. It also shows the episode workflow as the current task decomposition.
+
+The model is explicitly a scenario, not a prediction. Per-task time allocation is not yet measured consistently, so workflow steps are treated as a qualitative/equal-weight proxy until observed task-level evidence replaces them.
+
+See `notes/task-economic-model.md` for the full method and upgrade path.
