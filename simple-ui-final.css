@@ -1,0 +1,23 @@
+/* Final simplification pass: calm discovery first, analysis on demand. */
+body .site-header nav a{display:none!important}
+body .site-header nav a[href="/markets"],body .site-header nav a[href="/markets/"],body .site-header nav a[href="/industries"],body .site-header nav a[href="/industries/"],body .site-header nav a[href="/episodes"],body .site-header nav a[href="/experiments"]{display:block!important}
+body .top-pick,body #radar,body #method{display:none!important}
+.simple-story{margin:6px 0 22px}
+.simple-story-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.simple-story-head strong{font-size:18px;letter-spacing:-.02em}.simple-story-head span{font-size:12px;color:var(--simple-muted)}
+body .rank-row{grid-template-columns:34px minmax(220px,1fr) 70px!important}
+body .rank-row>:nth-child(n+4){display:none!important}
+body .industry-row{grid-template-columns:34px minmax(0,1fr) 72px!important}
+body .industry-row-score{display:block!important;text-align:right!important}.industry-row-score>strong{display:block!important}.industry-row-score>span{display:block!important;font-size:9px!important}.industry-row-score>b{display:none!important}.industry-row-score>b+span{display:none!important}
+body .local-row{grid-template-columns:34px minmax(0,1fr) 72px!important}.local-metrics{display:block!important;text-align:right!important}.local-metrics>b,.local-metrics>b+span{display:none!important}
+body .market-card .card-meta,body .industry-card-meta{font-size:10px!important;text-transform:none!important;letter-spacing:0!important}
+body .market-card .card-score,body .industry-card-meta strong{font-size:17px!important}
+body .mechanism-chain{display:none!important}
+.simple-deep{margin:18px 0 0}.simple-deep>summary{font-size:13px!important;font-weight:600!important;padding:10px 14px!important}.simple-deep-body{margin-top:12px}.simple-deep-body>.section,.simple-deep-body>.attack-plan{margin-top:10px!important}
+body .episode-scoreboard>div:nth-child(n+4){display:none!important}
+body .episode-row{grid-template-columns:34px minmax(0,1fr) 70px 70px!important}.episode-row>:nth-child(3){display:none!important}
+body .experiment-plan>div:nth-child(n+4){display:none!important}
+body .experiment-row{grid-template-columns:54px minmax(0,1fr) minmax(260px,.9fr)!important}
+body .experiment-plan{grid-template-columns:repeat(3,1fr)!important}
+body .composite-warning{border-radius:14px!important;border:1px solid var(--simple-line)!important;background:var(--simple-soft)!important;color:var(--simple-text)!important}.composite-warning strong{color:var(--simple-text)!important}.composite-warning p{color:var(--simple-muted)!important}
+@media(max-width:700px){body .site-header nav a[href="/experiments"]{display:none!important}body .rank-row{grid-template-columns:28px 1fr 58px!important}.simple-story-head{align-items:flex-start}.simple-story-head span{display:none}.episode-row{grid-template-columns:28px 1fr 54px!important}.episode-row>:nth-child(5){display:none!important}.experiment-row{grid-template-columns:44px 1fr!important}.experiment-row>:last-child{grid-column:2!important}.experiment-plan{grid-template-columns:1fr!important}}
