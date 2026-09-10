@@ -1,0 +1,91 @@
+/* Simpler, Airbnb-like discovery layer: one insight at a time, details on demand. */
+:root{
+  --simple-bg:#fff;
+  --simple-soft:#f7f7f7;
+  --simple-line:#e7e7e7;
+  --simple-text:#222;
+  --simple-muted:#717171;
+  --simple-accent:#222;
+}
+body{background:var(--simple-bg)!important;color:var(--simple-text)!important;font-size:15px!important;line-height:1.45!important}
+body main{margin-left:0!important;max-width:1440px;margin-right:auto!important;margin-left:auto!important;padding:0 28px!important}
+body footer{margin:32px 28px 0!important;border-top:1px solid var(--simple-line)!important;color:var(--simple-muted)!important}
+body .site-header{position:sticky!important;inset:auto!important;width:100%!important;height:72px!important;padding:0 28px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;border:0!important;border-bottom:1px solid var(--simple-line)!important;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(14px)!important;overflow:visible!important}
+body .brand{border:0!important;padding:0!important;font-size:13px!important;letter-spacing:.02em!important;gap:9px!important}
+body .brand-mark{width:28px!important;height:28px!important;border-radius:8px!important}
+body .site-header nav{display:flex!important;flex-direction:row!important;width:auto!important;gap:5px!important;margin:0!important}
+body .site-header nav a{padding:9px 12px!important;border-radius:999px!important;font-size:13px!important;color:var(--simple-text)!important}
+body .site-header nav a:hover,body .site-header nav a.is-active{background:var(--simple-soft)!important}
+
+body .hero,body .geo-hero,body .industry-hero,body .episode-hero,body .episode-detail-hero,body .local-hero,body .compare-hero{display:block!important;padding:34px 0 20px!important;border-bottom:0!important;background:transparent!important}
+body .hero h1,body .geo-hero h1,body .industry-hero h1,body .episode-detail-hero h1{font-size:34px!important;line-height:1.15!important;letter-spacing:-.03em!important;max-width:760px!important}
+body .eyebrow{font-size:11px!important;letter-spacing:.06em!important;margin-bottom:8px!important;color:var(--simple-muted)!important}
+body .lede,body .geo-hero .lede,body .episode-detail-hero .lede{font-size:16px!important;line-height:1.5!important;max-width:760px!important;margin:9px 0 0!important;color:var(--simple-muted)!important}
+body .hero-stats,body .geo-summary,body .episode-scoreboard{margin-top:20px!important;border:0!important;display:flex!important;gap:8px!important;flex-wrap:wrap!important}
+body .stat,body .geo-summary .stat,body .episode-scoreboard>div{border:1px solid var(--simple-line)!important;border-radius:12px!important;padding:10px 13px!important;min-width:110px!important;background:#fff!important}
+body .stat strong,body .episode-scoreboard strong{font-size:17px!important}
+body .stat span,body .episode-scoreboard span{font-size:10px!important;color:var(--simple-muted)!important}
+
+body .section{padding:26px 0 12px!important}
+body .section-head{margin-bottom:14px!important;gap:16px!important;align-items:end!important}
+body .section-head h2,body .section-subhead h3{font-size:22px!important;line-height:1.2!important;letter-spacing:-.02em!important}
+body .section-note{font-size:12px!important;color:var(--simple-muted)!important;max-width:520px!important}
+
+/* Top insights feel like discovery cards, not dashboards. */
+.simple-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 22px}
+.simple-insight{border:1px solid var(--simple-line);border-radius:16px;padding:16px;background:#fff;min-height:150px;display:flex;flex-direction:column;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.simple-insight:hover{box-shadow:0 4px 18px rgba(0,0,0,.08);transform:translateY(-1px)}
+.simple-insight small{font-size:11px;color:var(--simple-muted);margin-bottom:9px}
+.simple-insight h3{font-size:17px;line-height:1.25;margin:0 0 8px;letter-spacing:-.02em}
+.simple-insight p{font-size:13px;line-height:1.45;color:var(--simple-muted);margin:0}
+.simple-insight .simple-score{margin-top:auto;padding-top:12px;font-size:13px;font-weight:700}
+.simple-insight .simple-score span{font-weight:400;color:var(--simple-muted);margin-left:5px}
+
+/* One simple story card replaces multi-node diagrams. */
+.story-panel{margin:0 0 24px!important;border:1px solid var(--simple-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:0 1px 2px rgba(0,0,0,.03)!important}
+.story-panel-head{padding:13px 16px!important;background:transparent!important;border-bottom:1px solid var(--simple-line)!important}
+.story-panel-head strong{font-size:14px!important}.story-panel-head span{font-size:10px!important}
+.story-spine,.story-spine.five{display:grid!important;grid-template-columns:1fr!important}
+.story-node{min-height:0!important;padding:13px 16px 13px 42px!important;border:0!important;border-bottom:1px solid var(--simple-line)!important;background:transparent!important}
+.story-node:last-child{border-bottom:0!important}.story-node:not(:last-child)::after{display:none!important}
+.story-node .story-step{position:absolute;left:15px;top:14px;margin:0!important}.story-node .story-step b{width:20px!important;height:20px!important;background:var(--simple-text)!important}
+.story-node .story-step{font-size:0!important}.story-node strong{font-size:14px!important;margin-bottom:3px!important}.story-node p{font-size:12px!important;color:var(--simple-muted)!important}
+.story-summary{display:block!important}.story-summary>div{padding:12px 16px!important;border:0!important;border-top:1px solid var(--simple-line)!important}
+.episode-bridge{display:block!important;padding:12px 16px!important}.episode-bridge i{display:none!important}.episode-bridge span,.episode-bridge b{display:block!important}.episode-bridge span+ b{margin-bottom:8px}
+
+/* Lists: readable and calm. */
+body .rank-header{display:none!important}
+body .rank-list,body .industry-ranking,body .episode-list,body .experiment-list,body .leaderboard{border-top:0!important}
+body .rank-row,body .industry-row,body .local-row,body .episode-row,body .leader-row{border:1px solid var(--simple-line)!important;border-radius:14px!important;margin-bottom:9px!important;background:#fff!important;padding:13px 14px!important;min-height:0!important;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+body .rank-row:hover,body .industry-row:hover,body .local-row:hover,body .episode-row:hover,body .leader-row:hover{background:#fff!important;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+body .rank-title,body .industry-row h3,body .local-row h3,body .episode-row h3{font-size:15px!important;line-height:1.3!important}
+body .rank-title span,body .industry-row p,body .local-row p,body .episode-row p{font-size:12px!important;line-height:1.45!important;color:var(--simple-muted)!important}
+body .metric-strong,body .industry-row-score strong,body .local-metrics strong,body .episode-row .metric{font-size:18px!important;color:var(--simple-text)!important}
+
+/* Discovery grids. */
+body .market-grid,body .industry-grid,body .archetype-grid{border:0!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+body .market-card,body .industry-card,body .archetype-card{border:1px solid var(--simple-line)!important;border-radius:16px!important;padding:16px!important;min-height:180px!important;background:#fff!important}
+body .market-card:hover,body .industry-card:hover,body .archetype-card:hover{background:#fff!important;box-shadow:0 4px 18px rgba(0,0,0,.08)!important}
+body .market-card h3,body .industry-card h3,body .archetype-card h3{font-size:18px!important;line-height:1.2!important;margin:12px 0 7px!important}
+body .market-card p,body .industry-card p,body .archetype-card p{font-size:12px!important;color:var(--simple-muted)!important}
+
+/* Advanced analysis stays available but visually secondary. */
+.simple-secondary{margin-top:18px}
+.simple-secondary>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--simple-line);border-radius:999px;font-size:12px;background:#fff}
+.simple-secondary>summary::-webkit-details-marker{display:none}.simple-secondary>summary:after{content:'+';font-size:16px}.simple-secondary[open]>summary:after{content:'−'}
+body #radar.simple-collapsed,body #method.simple-collapsed{padding-top:8px!important}
+
+/* Episode detail: three valuable cards first; evidence later. */
+.simple-episode-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 24px}
+.simple-episode-summary article{border:1px solid var(--simple-line);border-radius:16px;padding:16px;background:#fff}
+.simple-episode-summary small{font-size:11px;color:var(--simple-muted)}.simple-episode-summary h3{font-size:16px;line-height:1.3;margin:7px 0}.simple-episode-summary p{font-size:12px;color:var(--simple-muted);margin:0}
+body .attack-plan{margin:0 0 24px!important;border:1px solid var(--simple-line)!important;border-radius:16px!important;background:#fff!important;color:var(--simple-text)!important;padding:16px!important}
+body .attack-plan h2{font-size:18px!important}.attack-grid{background:transparent!important;gap:10px!important}.attack-grid>div{background:var(--simple-soft)!important;border-radius:10px!important;padding:11px!important}.attack-grid span{color:var(--simple-muted)!important}.attack-grid strong{color:var(--simple-text)!important}.kill{color:#c13515!important}
+body .episode-grid{border:0!important;display:grid!important;grid-template-columns:1fr!important;gap:10px!important}.episode-block{border:1px solid var(--simple-line)!important;border-radius:14px!important;padding:14px!important;background:#fff!important}.episode-block.wide{grid-column:auto!important}
+body .claim{grid-template-columns:80px 1fr!important}
+
+/* Keep colors very restrained. */
+.status.measured,.status.reported,.status.inferred,.status.hypothesized{background:var(--simple-soft)!important;border-color:var(--simple-line)!important;color:var(--simple-muted)!important}
+
+@media(max-width:900px){body main{padding:0 18px!important}.simple-insights,body .market-grid,body .industry-grid,body .archetype-grid,.simple-episode-summary{grid-template-columns:1fr 1fr!important}}
+@media(max-width:700px){body .site-header{height:auto!important;min-height:58px!important;padding:8px 14px!important;gap:10px!important}body .site-header nav{overflow-x:auto!important;white-space:nowrap!important}.simple-insights,body .market-grid,body .industry-grid,body .archetype-grid,.simple-episode-summary{grid-template-columns:1fr!important}body main{padding:0 14px!important}.story-panel{margin-bottom:18px!important}body .hero,body .geo-hero,body .industry-hero,body .episode-hero,body .episode-detail-hero,body .local-hero,body .compare-hero{padding-top:24px!important}body .hero h1,body .geo-hero h1,body .industry-hero h1,body .episode-detail-hero h1{font-size:28px!important}}
