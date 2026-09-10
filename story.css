@@ -1,0 +1,166 @@
+/* Narrative layer: dense tool UI with a visible causal reading path. */
+:root{
+  --story-blue:#dfe9ff;
+  --story-warm:#ffe3d7;
+  --story-green:#e7f7b9;
+  --story-red:#f4d8d2;
+  --story-purple:#ece4ff;
+  --story-ink:#252620;
+}
+
+/* Legibility: keep density, stop shrinking the actual information. */
+body{font-size:14px;line-height:1.45;color:var(--story-ink)}
+body .site-header nav a{font-size:12px!important;line-height:1.35!important;padding:8px 9px!important}
+body .lede,body .geo-hero .lede,body .episode-detail-hero .lede{font-size:13px!important;line-height:1.5!important;max-width:900px!important}
+body .section-note{font-size:11px!important;line-height:1.5!important}
+body .rank-title{font-size:14px!important;line-height:1.3!important}
+body .rank-title span,body .industry-row p,body .local-row p,body .episode-row p,body .market-card p,body .industry-card p,body .archetype-card p{font-size:11px!important;line-height:1.45!important}
+body .episode-block p,body .episode-block li,body .claim,body .workflow-step{font-size:11px!important;line-height:1.5!important}
+body .detail-block{font-size:12px!important;line-height:1.5!important}
+body .detail-block h3,body .eyebrow,body .industry-kicker,body .industry-mini,body .episode-kicker{font-size:9px!important}
+
+/* Page headers become orientation panels rather than promotional heroes. */
+body .hero,body .geo-hero,body .industry-hero,body .episode-hero,body .episode-detail-hero,body .local-hero,body .compare-hero{
+  display:grid!important;
+  grid-template-columns:minmax(260px,.8fr) minmax(360px,1.2fr)!important;
+  column-gap:34px!important;
+  align-items:end!important;
+  padding:20px 30px 16px!important;
+}
+body .hero>h1,body .geo-hero>h1,body .industry-hero>h1,body .episode-detail-hero>h1{grid-column:1;grid-row:2}
+body .hero>.eyebrow,body .geo-hero>.eyebrow,body .industry-hero>.eyebrow,body .episode-detail-hero>.eyebrow{grid-column:1;grid-row:1}
+body .hero>.lede,body .geo-hero>.lede,body .industry-hero>.lede,body .episode-detail-hero>.lede{grid-column:2;grid-row:1/3;align-self:end;margin:0!important}
+body .hero>.hero-stats,body .hero>.geo-summary,body .geo-hero>.geo-summary,body .industry-hero>.geo-summary,body .episode-detail-hero>.episode-scoreboard{grid-column:1/-1;grid-row:3;margin-top:15px!important}
+body .hero h1,body .geo-hero h1,body .industry-hero h1,body .episode-detail-hero h1{font-size:28px!important;line-height:1.12!important}
+
+/* Reusable story spine. */
+.story-panel{
+  margin:14px 30px 0;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--app-panel);
+  overflow:hidden;
+}
+.story-panel-head{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  padding:10px 13px;border-bottom:1px solid var(--line);background:#f1f1ec;
+}
+.story-panel-head strong{font-size:12px}
+.story-panel-head span{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.story-spine{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  position:relative;
+}
+.story-spine.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.story-node{
+  position:relative;padding:14px 18px 15px 14px;min-height:112px;border-right:1px solid var(--line);
+}
+.story-node:last-child{border-right:0}
+.story-node:not(:last-child)::after{
+  content:'›';position:absolute;right:-10px;top:43%;z-index:2;width:18px;height:18px;border:1px solid var(--line);border-radius:50%;background:var(--app-panel);display:grid;place-items:center;font-size:14px;color:var(--muted);
+}
+.story-node .story-step{display:flex;align-items:center;gap:7px;margin-bottom:7px;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.story-node .story-step b{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--ink);color:white;font-size:8px}
+.story-node strong{display:block;font-size:13px;line-height:1.35;margin-bottom:5px}
+.story-node p{margin:0;font-size:11px;line-height:1.4;color:var(--muted)}
+.story-node.trigger{background:linear-gradient(0deg,var(--story-blue),transparent 55%)}
+.story-node.mechanism{background:linear-gradient(0deg,var(--story-warm),transparent 55%)}
+.story-node.economics{background:linear-gradient(0deg,var(--story-purple),transparent 55%)}
+.story-node.action{background:linear-gradient(0deg,var(--story-green),transparent 55%)}
+.story-node.risk{background:linear-gradient(0deg,var(--story-red),transparent 55%)}
+
+.story-summary{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr);gap:0;border-top:1px solid var(--line);
+}
+.story-summary>div{padding:12px 14px}
+.story-summary>div+div{border-left:1px solid var(--line)}
+.story-summary small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.story-summary strong{font-size:13px;line-height:1.4}
+.story-summary p{font-size:11px;line-height:1.45;color:var(--muted);margin:3px 0 0}
+
+/* Opportunity leader becomes a mini narrative, not just a score box. */
+body .top-pick{grid-template-columns:116px minmax(0,1fr)!important}
+body .top-pick-body{padding:12px 15px!important}
+body .top-pick-body h2{font-size:16px!important}
+.top-pick-story{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:10px}
+.top-pick-story>div{padding:9px 10px 4px 0;border-right:1px solid var(--line);margin-right:10px}
+.top-pick-story>div:last-child{border-right:0}
+.top-pick-story span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:3px}
+.top-pick-story p{font-size:10px!important;line-height:1.35!important;color:var(--story-ink)!important}
+
+/* Episode list: clearer hierarchy and visible mechanism tags. */
+.episode-story-wrap{margin:0 30px 18px}
+.episode-row{position:relative}
+.episode-row:before{content:'';position:absolute;left:20px;top:0;bottom:0;border-left:1px solid transparent}
+.episode-row:hover:before{border-color:var(--ink)}
+.episode-row .metric{font-variant-numeric:tabular-nums}
+.story-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 6px;border-radius:999px;border:1px solid var(--line);background:white;font-size:8px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.story-tag:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cool)}
+.story-tag.action:before{background:var(--acid-dark)}
+.story-tag.risk:before{background:var(--warm)}
+
+/* Episode dossier: the causal chain is the hero of the page. */
+.episode-storyline{margin:14px 30px 0}
+.episode-storyline .story-node{min-height:130px}
+.episode-storyline .story-node strong{font-size:14px}
+.episode-storyline .story-node p{font-size:11px}
+.episode-bridge{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:11px 14px;border-top:1px solid var(--line);background:#fafaf7;
+}
+.episode-bridge span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.episode-bridge b{font-size:12px;line-height:1.4}
+.episode-bridge i{font-style:normal;color:var(--muted)}
+
+/* Workflow as connected sequence. */
+.workflow-step{position:relative!important;padding:10px 0 10px 30px!important;grid-template-columns:28px 145px 1fr!important}
+.workflow-step:before{content:'';position:absolute;left:11px;top:0;bottom:0;border-left:1px solid var(--line)}
+.workflow-step:after{content:'';position:absolute;left:7px;top:18px;width:9px;height:9px;border-radius:50%;background:var(--app-panel);border:2px solid var(--ink)}
+.workflow-step:first-child:before{top:18px}.workflow-step:last-child:before{bottom:calc(100% - 18px)}
+.workflow-step span{color:var(--muted)}
+
+/* Actor/incentive links read as a small network. */
+.actor-network{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.actor-card{border:1px solid var(--line);padding:10px;border-radius:5px;background:white;position:relative}
+.actor-card strong{display:block;font-size:11px;margin-bottom:4px}.actor-card span{font-size:10px;color:var(--muted);line-height:1.35}
+.actor-card small{display:block;margin-top:7px;font-size:8px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+
+/* Evidence tells a story from fact to hypothesis. */
+.claim{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:10px;align-items:start!important}
+.claim .status{width:max-content}
+.claim a{margin:0!important;white-space:nowrap}
+.evidence-legend{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 8px}
+.evidence-legend span{font-size:8px;padding:3px 6px;border:1px solid var(--line);border-radius:999px}
+
+/* Industry narrative panels. */
+.industry-story{margin:14px 30px 0}
+.industry-story .story-node{min-height:105px}
+
+/* Section continuity. */
+.story-section{position:relative}
+.story-section:before{content:'';position:absolute;left:18px;top:-14px;height:14px;border-left:1px solid var(--line)}
+.section-head .eyebrow{margin-bottom:4px!important}
+
+/* Make color semantic rather than decorative. */
+.status.measured{background:var(--story-green)!important}.status.reported{background:var(--story-blue)!important}.status.inferred{background:var(--story-warm)!important}.status.hypothesized{background:var(--story-purple)!important}
+
+@media(max-width:1050px){
+  .story-spine,.story-spine.five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .story-node{border-bottom:1px solid var(--line)}
+  .story-node:nth-child(2n){border-right:0}
+  .story-node:not(:last-child)::after{display:none}
+  .actor-network{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  body .hero,body .geo-hero,body .industry-hero,body .episode-hero,body .episode-detail-hero,body .local-hero,body .compare-hero{display:block!important}
+  body .hero>.lede,body .geo-hero>.lede,body .industry-hero>.lede,body .episode-detail-hero>.lede{margin-top:7px!important}
+  .story-panel,.episode-storyline,.industry-story{margin:12px 16px 0}
+  .episode-story-wrap{margin:0 16px 14px}
+  .story-spine,.story-spine.five{grid-template-columns:1fr}
+  .story-node{border-right:0;border-bottom:1px solid var(--line);min-height:0}
+  .story-node:last-child{border-bottom:0}
+  .story-summary{grid-template-columns:1fr}.story-summary>div+div{border-left:0;border-top:1px solid var(--line)}
+  .top-pick-story{grid-template-columns:1fr 1fr}
+  .actor-network{grid-template-columns:1fr}
+  .claim{grid-template-columns:1fr}.claim a{white-space:normal}
+}
