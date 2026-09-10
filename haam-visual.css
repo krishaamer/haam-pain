@@ -1,0 +1,595 @@
+/* HAAM Summer '26 visual language, adapted for a simple research tool.
+   Canonical source: haam-microsite/docs/design-system.md.
+   Keep the Pain UX calm: brand language supports the insight, never competes with it. */
+:root{
+  --paper:#fffef9;
+  --ink:#1b1a17;
+  --muted:#66615a;
+  --panel:rgba(255,255,255,.72);
+  --line:rgba(28,27,24,.15);
+  --line-strong:rgba(28,27,24,.22);
+  --yellow:#ffd83d;
+  --pink:#ff7faf;
+  --green:#63d28b;
+  --contrast-bg:#1b1a17;
+  --contrast-fg:#fffef9;
+  --button-text:#fffef9;
+  --simple-bg:var(--paper);
+  --simple-soft:color-mix(in srgb,var(--paper) 86%,var(--ink) 3%);
+  --simple-line:var(--line);
+  --simple-text:var(--ink);
+  --simple-muted:var(--muted);
+  --simple-accent:var(--yellow);
+}
+
+html{background:var(--paper);overflow-x:clip}
+body{
+  background:var(--paper)!important;
+  color:var(--ink)!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+}
+body main{
+  width:min(calc(100% - 2rem),92rem)!important;
+  max-width:92rem!important;
+  margin-inline:auto!important;
+  padding-inline:0!important;
+}
+body footer{
+  width:min(calc(100% - 2rem),92rem)!important;
+  margin:3rem auto 0!important;
+  padding:1rem 0 2rem!important;
+  border-top:1px solid var(--line-strong)!important;
+  color:var(--muted)!important;
+}
+
+/* Floating HAAM chrome, reduced for tool use. */
+body .site-header{
+  position:sticky!important;
+  top:.7rem!important;
+  z-index:40!important;
+  width:min(calc(100% - 2rem),72rem)!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:.7rem auto 0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  backdrop-filter:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:.75rem!important;
+  overflow:visible!important;
+}
+body .brand,
+body .site-header nav{
+  background:color-mix(in srgb,var(--paper) 78%,transparent)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:0 .25rem 1.6rem rgba(27,26,23,.06)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+}
+body .brand{
+  min-height:2.55rem!important;
+  padding:.45rem .65rem!important;
+  border-radius:999px!important;
+  gap:.55rem!important;
+  color:var(--ink)!important;
+  font-size:.72rem!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  white-space:nowrap;
+}
+body .brand-mark{
+  width:1.75rem!important;
+  height:1.75rem!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:var(--yellow)!important;
+  color:var(--ink)!important;
+  font-size:.68rem!important;
+  font-weight:900!important;
+}
+body .site-header nav{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  width:auto!important;
+  min-height:2.55rem!important;
+  margin:0!important;
+  padding:.25rem!important;
+  gap:.1rem!important;
+  border-radius:999px!important;
+}
+body .site-header nav a{
+  display:none!important;
+  padding:.55rem .8rem!important;
+  border-radius:999px!important;
+  color:var(--ink)!important;
+  font-size:.7rem!important;
+  font-weight:900!important;
+  letter-spacing:.055em!important;
+  text-transform:uppercase!important;
+  transition:background .18s ease,transform .18s ease!important;
+}
+body .site-header nav a[href="/markets"],
+body .site-header nav a[href="/markets/"],
+body .site-header nav a[href="/industries"],
+body .site-header nav a[href="/industries/"],
+body .site-header nav a[href="/episodes"],
+body .site-header nav a[href="/experiments"]{display:block!important}
+body .site-header nav a:hover,
+body .site-header nav a.is-active{
+  background:var(--yellow)!important;
+  transform:translateY(-1px)!important;
+}
+
+/* Typography: HAAM contrast at product scale. */
+body .hero,
+body .geo-hero,
+body .industry-hero,
+body .episode-hero,
+body .episode-detail-hero,
+body .local-hero,
+body .compare-hero{
+  position:relative;
+  padding:clamp(3.2rem,6vw,5.4rem) 0 1.5rem!important;
+  isolation:isolate;
+}
+body .hero h1,
+body .geo-hero h1,
+body .industry-hero h1,
+body .episode-detail-hero h1,
+body .section-head h2,
+body .section-subhead h3,
+.simple-story-head strong,
+.econ-head h2{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:400!important;
+  text-wrap:balance;
+}
+body .hero h1,
+body .geo-hero h1,
+body .industry-hero h1,
+body .episode-detail-hero h1{
+  max-width:18ch!important;
+  font-size:clamp(2.8rem,5.4vw,5.4rem)!important;
+  line-height:.92!important;
+  letter-spacing:-.062em!important;
+}
+body .hero h1 em,
+body .geo-hero h1 em,
+body .industry-hero h1 em,
+body .episode-detail-hero h1 em{
+  position:relative;
+  z-index:0;
+  font-family:inherit!important;
+  font-weight:400!important;
+  font-style:italic!important;
+}
+body .hero h1 em::after,
+body .geo-hero h1 em::after,
+body .industry-hero h1 em::after,
+body .episode-detail-hero h1 em::after{
+  content:"";
+  position:absolute;
+  left:-.03em;
+  right:-.03em;
+  bottom:.08em;
+  height:.14em;
+  z-index:-1;
+  border-radius:999px 34% 999px 42%;
+  background:var(--yellow);
+  transform:rotate(-1.4deg);
+}
+body .eyebrow,
+body .industry-kicker,
+body .industry-mini,
+body .episode-kicker,
+.simple-insight small,
+.econ-head small,
+.econ-output small,
+.econ-thesis small,
+.econ-subhead small{
+  color:var(--muted)!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:.67rem!important;
+  font-weight:900!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+}
+body .lede,
+body .geo-hero .lede,
+body .episode-detail-hero .lede{
+  max-width:44rem!important;
+  color:var(--muted)!important;
+  font-size:clamp(1rem,1.35vw,1.2rem)!important;
+  font-weight:700!important;
+  line-height:1.52!important;
+}
+body .section-head h2,
+body .section-subhead h3{
+  font-size:clamp(1.9rem,3vw,3rem)!important;
+  line-height:.98!important;
+  letter-spacing:-.05em!important;
+}
+
+/* Stats become HAAM metadata chips. */
+body .hero-stats,
+body .geo-summary,
+body .episode-scoreboard{
+  gap:.45rem!important;
+  margin-top:1.5rem!important;
+}
+body .stat,
+body .geo-summary .stat,
+body .episode-scoreboard>div{
+  min-width:0!important;
+  padding:.65rem .85rem!important;
+  border:1px solid var(--line)!important;
+  border-radius:999px!important;
+  background:color-mix(in srgb,var(--paper) 78%,transparent)!important;
+  box-shadow:none!important;
+}
+body .stat strong,
+body .episode-scoreboard strong{
+  display:inline!important;
+  font-size:.9rem!important;
+  letter-spacing:-.02em!important;
+}
+body .stat span,
+body .episode-scoreboard span{
+  display:inline!important;
+  margin-left:.35rem!important;
+  color:var(--muted)!important;
+  font-size:.62rem!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+
+/* Signature section rule + painterly accent tick. */
+body .section{
+  position:relative;
+  padding:clamp(3.2rem,6vw,5.2rem) 0 1rem!important;
+}
+body .section-head{
+  position:relative;
+  padding-top:1.55rem;
+  border-top:1px solid var(--line-strong);
+}
+body .section-head::before,
+.simple-story::before,
+.economic-model::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-.42rem;
+  width:clamp(5.5rem,11vw,9rem);
+  height:.62rem;
+  border-radius:999px 35% 999px 42%;
+  background:var(--yellow);
+  transform:rotate(-.8deg);
+}
+
+/* The three primary insight cards use the three summer strokes. */
+.simple-story{
+  position:relative;
+  margin:clamp(2.3rem,5vw,4rem) 0 1.25rem!important;
+  padding-top:1.25rem;
+  border-top:1px solid var(--line-strong);
+}
+.simple-story-head{
+  margin-bottom:1rem!important;
+}
+.simple-story-head strong{
+  font-size:clamp(1.7rem,2.7vw,2.5rem)!important;
+  line-height:1!important;
+  letter-spacing:-.05em!important;
+}
+.simple-story-head span{
+  font-size:.68rem!important;
+  font-weight:900!important;
+  letter-spacing:.09em!important;
+  text-transform:uppercase!important;
+  color:var(--muted)!important;
+}
+.simple-insights{
+  gap:clamp(1rem,2vw,1.6rem)!important;
+}
+.simple-insight{
+  position:relative;
+  min-height:13rem!important;
+  padding:1.25rem 1rem 1rem!important;
+  border:0!important;
+  border-top:1px solid var(--line-strong)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transition:transform .18s ease!important;
+}
+.simple-insight::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-.34rem;
+  width:4.6rem;
+  height:.5rem;
+  border-radius:999px 38% 999px 42%;
+  transform:rotate(-1deg);
+  background:var(--yellow);
+}
+.simple-insight:nth-child(2)::before{background:var(--pink);transform:rotate(1deg)}
+.simple-insight:nth-child(3)::before{background:var(--green);transform:rotate(-.4deg)}
+.simple-insight:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:none!important;
+}
+.simple-insight h3{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(1.45rem,2.2vw,2rem)!important;
+  font-weight:400!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+  margin:.2rem 0 .7rem!important;
+  text-wrap:balance;
+}
+.simple-insight p{
+  max-width:34rem;
+  color:var(--muted)!important;
+  font-size:.95rem!important;
+  line-height:1.58!important;
+}
+.simple-insight .simple-score{
+  color:var(--ink)!important;
+  font-size:.72rem!important;
+  font-weight:900!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+}
+
+/* Browse cards and result rows flatten into calm editorial structure. */
+body .market-grid,
+body .industry-grid,
+body .archetype-grid{
+  gap:clamp(1rem,2vw,1.6rem)!important;
+  border:0!important;
+}
+body .market-card,
+body .industry-card,
+body .archetype-card{
+  position:relative;
+  min-height:14rem!important;
+  padding:1.2rem 0 1rem!important;
+  border:0!important;
+  border-top:1px solid var(--line-strong)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+body .market-card::before,
+body .industry-card::before,
+body .archetype-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-.27rem;
+  width:3.4rem;
+  height:.38rem;
+  border-radius:999px;
+  background:var(--yellow);
+}
+body .market-card:nth-child(3n+2)::before,
+body .industry-card:nth-child(3n+2)::before,
+body .archetype-card:nth-child(3n+2)::before{background:var(--green)}
+body .market-card:nth-child(3n)::before,
+body .industry-card:nth-child(3n)::before,
+body .archetype-card:nth-child(3n)::before{background:var(--pink)}
+body .market-card:hover,
+body .industry-card:hover,
+body .archetype-card:hover{
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:translateY(-2px);
+}
+body .market-card h3,
+body .industry-card h3,
+body .archetype-card h3{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(1.55rem,2.4vw,2.25rem)!important;
+  font-weight:400!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+}
+body .market-card p,
+body .industry-card p,
+body .archetype-card p{
+  color:var(--muted)!important;
+  font-size:.9rem!important;
+  line-height:1.55!important;
+}
+
+body .rank-row,
+body .industry-row,
+body .local-row,
+body .episode-row,
+body .leader-row{
+  margin:0!important;
+  padding:1rem .2rem!important;
+  border:0!important;
+  border-top:1px solid var(--line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transition:background .18s ease,padding .18s ease!important;
+}
+body .rank-row:last-child,
+body .industry-row:last-child,
+body .local-row:last-child,
+body .episode-row:last-child,
+body .leader-row:last-child{border-bottom:1px solid var(--line)!important}
+body .rank-row:hover,
+body .industry-row:hover,
+body .local-row:hover,
+body .episode-row:hover,
+body .leader-row:hover{
+  padding-inline:.65rem!important;
+  background:color-mix(in srgb,var(--yellow) 18%,transparent)!important;
+  box-shadow:none!important;
+}
+body .rank-title,
+body .industry-row h3,
+body .local-row h3,
+body .episode-row h3{
+  color:var(--ink)!important;
+  font-size:1rem!important;
+  font-weight:700!important;
+}
+body .rank-title span,
+body .industry-row p,
+body .local-row p,
+body .episode-row p{
+  color:var(--muted)!important;
+  font-size:.82rem!important;
+}
+
+/* Inputs, chips and buttons use the HAAM pill grammar. */
+body button,
+body select,
+body input[type="search"],
+.simple-secondary>summary,
+.simple-deep>summary,
+.econ-controls-wrap>summary{
+  font-family:Arial,Helvetica,sans-serif!important;
+}
+body select,
+body input[type="search"],
+body .chip,
+.simple-secondary>summary,
+.simple-deep>summary{
+  min-height:2.5rem!important;
+  border:1px solid var(--line-strong)!important;
+  border-radius:999px!important;
+  background:color-mix(in srgb,var(--paper) 80%,transparent)!important;
+  color:var(--ink)!important;
+}
+body .chip{
+  padding:.55rem .8rem!important;
+  font-size:.68rem!important;
+  font-weight:900!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+body .chip.active,
+body .chip:hover{background:var(--yellow)!important;border-color:transparent!important;color:var(--ink)!important}
+body .top-pick-body button,
+body .dialog-close{
+  border:0!important;
+  border-radius:999px!important;
+  background:var(--ink)!important;
+  color:var(--button-text)!important;
+  font-size:.7rem!important;
+  font-weight:900!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  transition:transform .18s ease,background .18s ease!important;
+}
+body .top-pick-body button:hover{
+  background:var(--yellow)!important;
+  color:var(--ink)!important;
+  transform:translateY(-2px) rotate(-1deg)!important;
+}
+
+/* Economic model: HAAM evidence tool, not a SaaS calculator card. */
+.economic-model{
+  position:relative;
+  margin:clamp(2.6rem,5vw,4.5rem) 0 1.5rem!important;
+  padding-top:1.45rem;
+  border:0!important;
+  border-top:1px solid var(--line-strong)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  overflow:visible!important;
+}
+.economic-model::before{background:var(--green)}
+.econ-head{
+  padding:0 0 1.5rem!important;
+  border-bottom:1px solid var(--line)!important;
+}
+.econ-head h2{
+  font-size:clamp(2rem,3.2vw,3.2rem)!important;
+  line-height:.98!important;
+  letter-spacing:-.05em!important;
+}
+.econ-basis{border-left:1px solid var(--line)!important}
+.econ-output{padding:0!important}
+.econ-output article{border-color:var(--line)!important}
+.econ-output strong{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(1.8rem,2.8vw,2.7rem)!important;
+  font-weight:400!important;
+  letter-spacing:-.05em!important;
+}
+.econ-thesis{
+  margin:0 0 1.2rem!important;
+  padding:1.05rem 1.2rem!important;
+  border-radius:1rem!important;
+  background:color-mix(in srgb,var(--yellow) 22%,var(--paper))!important;
+}
+.econ-thesis strong{font-size:.98rem!important}
+.econ-controls-wrap{border-color:var(--line)!important}
+.econ-scenario{
+  border:1px solid var(--line)!important;
+  border-radius:1rem!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.econ-scenario:hover,
+.econ-scenario.active{border-color:var(--ink)!important;background:color-mix(in srgb,var(--yellow) 20%,transparent)!important}
+.econ-controls input[type="range"]{accent-color:var(--ink)}
+.econ-task{border-color:var(--line)!important}
+.econ-formula code{background:var(--ink)!important;color:var(--yellow)!important}
+
+/* Modal / deep evidence surfaces use the frosted card language. */
+body .detail-dialog{
+  border:1px solid var(--line)!important;
+  border-radius:1.35rem!important;
+  background:color-mix(in srgb,var(--paper) 94%,transparent)!important;
+  box-shadow:0 1.15rem 3.5rem rgba(27,26,23,.14)!important;
+  backdrop-filter:blur(18px)!important;
+}
+body .detail h2{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:400!important;
+  font-size:clamp(2rem,4vw,3.7rem)!important;
+  line-height:.95!important;
+  letter-spacing:-.055em!important;
+}
+body .detail-block{border-color:var(--line)!important}
+.status.measured{background:color-mix(in srgb,var(--green) 25%,var(--paper))!important}
+.status.reported{background:color-mix(in srgb,var(--yellow) 24%,var(--paper))!important}
+.status.inferred{background:color-mix(in srgb,var(--pink) 18%,var(--paper))!important}
+.status.hypothesized{background:transparent!important}
+
+/* Subtle motion only. */
+a,button,.simple-insight,.market-card,.industry-card,.archetype-card{transition-duration:.18s!important;transition-timing-function:ease!important}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+@media(max-width:900px){
+  body .market-grid,body .industry-grid,body .archetype-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .econ-head{grid-template-columns:1fr!important}.econ-basis{border-left:0!important;border-top:1px solid var(--line)!important;padding:1rem 0 0!important}
+}
+@media(max-width:700px){
+  body main,body footer{width:min(calc(100% - 1rem),92rem)!important}
+  body .site-header{top:.35rem!important;width:calc(100% - 1rem)!important;margin-top:.35rem!important;gap:.35rem!important}
+  body .brand{padding:.35rem .45rem!important}.brand>span:last-child{display:none}
+  body .site-header nav{overflow-x:auto!important;max-width:calc(100vw - 4.4rem)!important;scrollbar-width:none}
+  body .site-header nav::-webkit-scrollbar{display:none}
+  body .site-header nav a{padding:.48rem .65rem!important;font-size:.62rem!important}
+  body .site-header nav a[href="/experiments"]{display:none!important}
+  body .hero h1,body .geo-hero h1,body .industry-hero h1,body .episode-detail-hero h1{font-size:clamp(2.5rem,14vw,4rem)!important}
+  .simple-insights,body .market-grid,body .industry-grid,body .archetype-grid{grid-template-columns:1fr!important}
+  .simple-insight{min-height:0!important;padding-bottom:1.4rem!important}
+  .econ-output{grid-template-columns:1fr 1fr!important}.econ-output article:nth-child(2){border-right:0!important}.econ-output article{border-bottom:1px solid var(--line)!important}
+}
