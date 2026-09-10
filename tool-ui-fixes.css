@@ -1,0 +1,13 @@
+body .hero h1 em::before,
+body .geo-hero h1 em::before,
+body .industry-hero h1 em::before,
+body .episode-detail-hero h1 em::before{content:' '}
+
+body[data-page='markets'] .site-header nav a[href='/markets/'],
+body[data-page='industries'] .site-header nav a[href='/industries/'],
+body[data-page='industry'] .site-header nav a[href='/industries'],
+body[data-page='industry-city'] .site-header nav a[href='/industries']{
+  background:var(--app-active)!important;
+  color:var(--ink)!important;
+  font-weight:650;
+}
