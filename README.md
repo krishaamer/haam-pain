@@ -14,6 +14,7 @@ Broad scores answer **where should we look?** Pain episodes answer **who exactly
 
 ## Main surfaces
 
+- `/timeline` - dated personal notes and project milestones tracing the thinking behind HAAM Pain
 - `/markets` - countries and researched cities
 - `/compare` - city comparisons
 - `/canada/toronto/neighbourhoods` - Toronto neighbourhood pilot
@@ -182,6 +183,8 @@ complaint < search < observed workaround < existing spend < pays us < measurable
 
 ## Research files
 
+- `timeline/index.html` - accessible, static project timeline with excerpts and expandable source records
+- `notes/project-timeline.md` - provenance and maintenance rules for the timeline
 - `data/index.json` + `data/opportunities-*.json` - Toronto broad opportunity dataset
 - `data/markets.json` - country and city research
 - `data/toronto-neighbourhoods-*.json` - Toronto local signals

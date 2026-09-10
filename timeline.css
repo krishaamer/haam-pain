@@ -1,0 +1,50 @@
+/* A dated reading path through the notes, using the existing HAAM palette. */
+body.timeline-page main { max-width: 72rem !important; overflow: visible; }
+.timeline-intro { padding: clamp(3rem, 7vw, 6rem) 0 2.5rem; max-width: 55rem; }
+.timeline-label { margin: 0 0 1.3rem; color: var(--muted); font-size: .9rem; }
+.timeline-intro h1 { max-width: 16ch; font: 400 clamp(2.8rem, 6vw, 5rem)/1.02 Georgia, serif; letter-spacing: -.045em; }
+.timeline-lede { max-width: 42rem; margin: 1.6rem 0 1rem; font-size: 1.15rem; line-height: 1.6; }
+.timeline-context { max-width: 43rem; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+.timeline-jump { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 1.8rem; }
+.timeline-jump a { padding-block: .55rem; text-underline-offset: .3em; font-size: .9rem; }
+.timeline-jump a:last-child { font-weight: 700; }
+.timeline-era { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 3rem; padding-top: 2.3rem; border-top: 1px solid var(--line-strong); scroll-margin-top: 6rem; }
+.timeline-era-label { align-self: start; position: sticky; top: 6rem; padding-bottom: 1.5rem; }
+.timeline-era-label h2 { margin: 0 0 .8rem; font: 400 2.3rem/1.1 Georgia, serif; letter-spacing: -.04em; }
+.timeline-era-label p { max-width: 19ch; margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.timeline-entries { margin: 0; padding: 0 0 0 1.8rem; list-style: none; border-left: 2px solid var(--line); }
+.timeline-entry { position: relative; padding: 0 0 3.3rem; scroll-margin-top: 6rem; }
+.timeline-entry::before { content: ''; position: absolute; width: .75rem; height: .75rem; left: -2.24rem; top: .24rem; border-radius: 50%; border: 2px solid var(--ink); background: var(--paper); }
+.timeline-entry.featured::before { background: var(--yellow); }
+.timeline-entry:last-child { padding-bottom: 2.5rem; }
+.timeline-date { display: inline-block; padding: .1rem 0 .35rem; color: var(--muted); font-size: .8rem; text-underline-offset: .25em; }
+.timeline-entry h3 { margin: .3rem 0 1rem; max-width: 34ch; font-size: 1.3rem; line-height: 1.25; letter-spacing: -.025em; }
+.timeline-quote { margin: 0 0 1.1rem; padding: 0; max-width: 36ch; font: 400 clamp(1.45rem, 2.4vw, 2rem)/1.3 Georgia, serif; letter-spacing: -.02em; white-space: pre-line; }
+.timeline-entry.featured .timeline-quote { border-left: .3rem solid var(--yellow); padding-left: 1rem; }
+.timeline-reading { max-width: 65ch; margin: 0 0 .85rem; font-size: .95rem; line-height: 1.65; color: var(--muted); }
+.timeline-source { max-width: 65ch; font-size: .85rem; line-height: 1.6; }
+.timeline-source summary { width: fit-content; padding: .5rem .15rem; cursor: pointer; text-decoration: underline; text-underline-offset: .25em; }
+.timeline-source[open] { padding-bottom: .8rem; }
+.timeline-source p { margin: .4rem 0; overflow-wrap: anywhere; }
+.timeline-source cite { font-style: normal; font-weight: 700; }
+.timeline-source .source-meta { color: var(--muted); }
+.timeline-next { margin: 1rem 0 2rem; padding: 1.7rem; border-radius: 1rem; background: color-mix(in srgb, var(--yellow) 22%, var(--paper)); }
+.timeline-next h2 { margin: 0 0 .7rem; font: 400 2rem/1.1 Georgia, serif; letter-spacing: -.035em; }
+.timeline-next p { max-width: 64ch; font-size: 1rem; line-height: 1.6; }
+.timeline-next a { display: inline-block; padding-block: .5rem; font-weight: 700; text-underline-offset: .25em; }
+.timeline-page :is(a, summary):focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 2px; }
+.timeline-skip { position: absolute; top: -5rem; left: 1rem; z-index: 60; padding: .8rem; background: var(--yellow); }
+.timeline-skip:focus { top: .8rem; }
+@media (max-width: 700px) {
+  body.timeline-page main { width: calc(100% - 2rem) !important; }
+  .timeline-intro { padding-top: 3rem; }
+  .timeline-intro h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .timeline-lede { font-size: 1.05rem; }
+  .timeline-era { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 1.8rem; }
+  .timeline-era-label { position: static; padding: 0; }
+  .timeline-era-label h2 { font-size: 2rem; }
+  .timeline-era-label p { max-width: none; }
+  .timeline-entries { margin-left: .35rem; padding-left: 1.4rem; }
+  .timeline-entry::before { left: -1.84rem; }
+  .timeline-next { padding: 1.25rem; }
+}

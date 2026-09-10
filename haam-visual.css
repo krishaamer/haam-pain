@@ -118,6 +118,7 @@ body .site-header nav a[href="/markets/"],
 body .site-header nav a[href="/industries"],
 body .site-header nav a[href="/industries/"],
 body .site-header nav a[href="/episodes"],
+body .site-header nav a[href="/timeline/"],
 body .site-header nav a[href="/experiments"]{display:block!important}
 body .site-header nav a:hover,
 body .site-header nav a.is-active{
@@ -573,6 +574,9 @@ body .detail-block{border-color:var(--line)!important}
 .status.hypothesized{background:transparent!important}
 
 /* Subtle motion only. */
+.timeline-home-link{margin:0 0 1rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
+.timeline-home-link a{display:inline-block;padding:.4rem 0;text-underline-offset:.25em}
+.timeline-home-link a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 a,button,.simple-insight,.market-card,.industry-card,.archetype-card{transition-duration:.18s!important;transition-timing-function:ease!important}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
